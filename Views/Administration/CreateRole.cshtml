@@ -1,0 +1,20 @@
+﻿@model CreateRoleViewModel
+@{
+    ViewData["Title"] = "Yeni Rol ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <form method="post">
+        <!--<div asp-validation-summary="All" class="text-danger"></div>-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="RoleName">Rol İsmi</label>
+                    <input asp-for="RoleName" class="form-control" />
+                    <span asp-validation-for="RoleName" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Rol Ekle</button>
+    </form>

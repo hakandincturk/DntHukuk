@@ -1,0 +1,74 @@
+﻿    body {
+        font-family: "Exo 2.0", sans-serif;
+        font-size:14px;
+        margin:0;
+        padding:0;
+    }
+
+    .containers {
+        width: 100vw !important;
+        height: 100vh !important;
+    }
+
+    .loginBody {
+        background: #f2f2f2;
+        width: 100%;
+        min-width: 100%;
+        height: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loginBody .loginContainer {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .loginBody .loginContainer .loginSection {
+    
+    }
+
+    .loginBody .loginContainer .loginSection .loginWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 450px;
+        height: 525px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: black 2px 2px 20px -11px;
+    }
+
+    .loginBody .loginContainer .loginSection .loginWrapper img{
+        margin-top:16px;
+        max-width:100%;
+    }
+
+    .loginBody .loginContainer .loginSection .loginWrapper form {
+        width:75%;
+        max-width:100%;
+        margin-bottom:25px
+    }
+
+    .loginBody .loginContainer .loginSection .loginWrapper form a {
+        text-decoration: none;
+        float: right;
+    }
+
+    .loginBody .loginContainer .loginSection .loginWrapper .formItem label {
+        font-weight: 700;
+        color: #333;
+    }
+    
+    .loginBody .loginContainer .loginSection .loginWrapper .formItem input {
+        border-radius:3px;
+        outline:none;
+    }
+    
+
+
+
