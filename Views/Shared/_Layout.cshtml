@@ -1,4 +1,9 @@
-﻿@inject Microsoft.AspNetCore.Identity.SignInManager<DntHukuk.Web.Areas.Identity.Data.ApplicationUser> signInManager;
+﻿@using Microsoft.AspNetCore.Identity
+@using DntHukuk.Web.Areas.Identity.Data
+
+@inject Microsoft.AspNetCore.Identity.SignInManager<DntHukuk.Web.Areas.Identity.Data.ApplicationUser> signInManager;
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,40 +11,30 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DntHukuk.Web</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
+    <link href="~/css/navBar.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DntHukuk.Web</a>
-                @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
-                {
-                    <a class="btn btn-primary" asp-controller="Home" asp-action="Denemesss">Denemesss</a>
-                }
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+    <header class="headerContainer">
+        <nav class="headerNavbar">
+            <div class="secondHeaderContainer">
+                <img src="~/pictures/logo.png" width="275" height="100" class="headerLogo" />
+                <div class="navMenu">
                     <partial name="_LoginPartial.cshtml" />
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - DntHukuk.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

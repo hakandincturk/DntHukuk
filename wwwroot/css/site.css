@@ -59,8 +59,9 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  font-family:"Exo 2.0", sans-serif;
+    /* Margin bottom by footer height */
+    font-family: "Exo 2.0", sans-serif;
+    background: #f5f4f4;
 }
 .footer {
   position: absolute;
