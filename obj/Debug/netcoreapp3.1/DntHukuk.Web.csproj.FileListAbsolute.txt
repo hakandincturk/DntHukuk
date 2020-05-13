@@ -197,3 +197,4 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\NotFound.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Administration\EditUsersInRole.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Denemesss.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SideBar.cshtml.g.cs

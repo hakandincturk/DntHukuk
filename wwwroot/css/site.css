@@ -63,6 +63,11 @@ body {
     font-family: "Exo 2.0", sans-serif;
     background: #f5f4f4;
 }
+
+.container2{
+    margin-top:100px;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

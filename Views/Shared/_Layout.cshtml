@@ -13,11 +13,11 @@
     <title>@ViewData["Title"] - DntHukuk.Web</title>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
     <link href="~/css/navBar.css" rel="stylesheet" />
+    <link href="~/css/sideBar.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-
     <header class="headerContainer">
         <nav class="headerNavbar">
             <div class="secondHeaderContainer">
@@ -29,13 +29,14 @@
         </nav>
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container2">
+        <main role="main" class="">
             @RenderBody()
         </main>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
