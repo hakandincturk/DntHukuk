@@ -50,15 +50,17 @@
         font-weight: 500;
         text-decoration: none;
         color: #333333;
+        font-size:16px;
     }
 
     .headerContainer .headerNavbar .secondHeaderContainer .navMenu button {
         padding: 40px 20px !important;
         font-weight: 500 !important;
         color: #333333 !important;
-        border:none;
-        background:none;
-        outline:none;
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 16px;
     }
 
 
