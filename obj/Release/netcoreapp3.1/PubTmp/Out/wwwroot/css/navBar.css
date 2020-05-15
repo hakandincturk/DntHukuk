@@ -1,0 +1,68 @@
+﻿    body {
+        font-family:'Exo 2.0', sans-serif;
+        font-size:14px;
+        line-height:20px;
+    }
+
+    .headerContainer {
+        max-width: 100%;
+        box-shadow: black 3px 3px 20px -15px;
+    }
+
+    .headerContainer .headerNavbar {
+        width: 100%;
+        max-width: 100%;
+        background: #ddd;
+        margin:0;
+        padding:0;
+    }
+
+    .headerContainer .headerNavbar .secondHeaderContainer {
+        max-width: 100%;
+        position: fixed;
+        top: 0%;
+        left: 0;
+        right: 0%;
+        bottom: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        z-index: 1;
+        background: white;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: black 4px 4px 20px -15px;
+        z-index: 3;
+    }
+
+    .headerContainer .headerNavbar .secondHeaderContainer img{
+        margin-left:36px;
+        max-width:100%;
+    }
+
+    .headerContainer .headerNavbar .secondHeaderContainer .navMenu {
+        margin-right: 46px;
+        max-width: 100%;
+        position:relative;
+    }
+
+    .headerContainer .headerNavbar .secondHeaderContainer .navMenu a {
+        padding:40px 20px;
+        font-weight: 500;
+        text-decoration: none;
+        color: #333333;
+        font-size:16px;
+    }
+
+    .headerContainer .headerNavbar .secondHeaderContainer .navMenu button {
+        padding: 40px 20px !important;
+        font-weight: 500 !important;
+        color: #333333 !important;
+        border: none;
+        background: none;
+        outline: none;
+        font-size: 16px;
+    }
+
+
+
