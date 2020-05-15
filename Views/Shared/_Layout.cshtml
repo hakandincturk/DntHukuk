@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - DntHukuk.Web</title>
+    <title>@ViewData["Title"] - DntHukuk</title>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
     <link href="~/css/navBar.css" rel="stylesheet" />
     <link href="~/css/sideBar.css" rel="stylesheet" />
@@ -33,7 +33,10 @@
 
     <div class="container2">
         <main role="main" class="">
-            @RenderBody()
+            <partial name="~/Views/Shared/_SideBar.cshtml" />
+            <div style="width:82vw; margin-left:calc(18vw - 10px)">
+                @RenderBody()
+            </div>
         </main>
     </div>
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DntHukuk.Web.Areas.Identity.Data;
+using DntHukuk.Web.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +17,7 @@ namespace DntHukuk.Web.Data
         {
         }
 
-
+        public DbSet<MuvekkilTurleri> muvekkilTurleri { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

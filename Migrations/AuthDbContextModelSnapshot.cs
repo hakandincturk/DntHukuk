@@ -100,6 +100,21 @@ namespace DntHukuk.Web.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("DntHukuk.Web.Models.MuvekkilTurleri", b =>
+                {
+                    b.Property<int>("muvekkilTuruId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("muvekkilTuruAdi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("muvekkilTuruId");
+
+                    b.ToTable("muvekkilTuru");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")

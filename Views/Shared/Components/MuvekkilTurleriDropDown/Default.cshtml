@@ -1,0 +1,8 @@
+﻿@model IEnumerable<MuvekkilTurleri>
+
+<select name="muvekkilTurleriDropDown">
+    @foreach (var item in Model)
+    {
+        <option value="@item.muvekkilTuruId">@item.muvekkilTuruAdi</option>
+    }
+</select>
