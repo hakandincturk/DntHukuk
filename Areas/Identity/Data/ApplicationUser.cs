@@ -30,7 +30,7 @@ namespace DntHukuk.Web.Areas.Identity.Data
         public string Password { get; set; }
 
         [PersonalData]
-        [DataType(DataType.Text)]
-        public int userAccesLevel { get; set; }
+        [Column(TypeName = "nvarchar(max)")]
+        public int userImagePath { get; set; }
     }
 }

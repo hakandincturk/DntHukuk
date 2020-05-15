@@ -44,7 +44,7 @@ namespace DntHukuk.Web.Migrations
                     userLastName = table.Column<string>(type: "nvarchar(55)", nullable: true),
                     userEmail = table.Column<string>(type: "nvarchar(75)", nullable: true),
                     Password = table.Column<string>(nullable: true),
-                    userAccesLevel = table.Column<int>(nullable: false)
+                    userImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

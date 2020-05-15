@@ -18,6 +18,7 @@
     }
 
     .headerContainer .headerNavbar .secondHeaderContainer {
+        height:100px;
         max-width: 100%;
         position: fixed;
         top: 0%;
@@ -46,13 +47,18 @@
         position:relative;
     }
 
-    .headerContainer .headerNavbar .secondHeaderContainer .navMenu a {
+    .headerContainer .headerNavbar .secondHeaderContainer .navMenu form a {
         padding:40px 20px;
         font-weight: 500;
         text-decoration: none;
         color: #333333;
         font-size:16px;
+        transition:175ms background ease-in-out;
     }
+
+        .headerContainer .headerNavbar .secondHeaderContainer .navMenu form a:hover, .headerContainer .headerNavbar .secondHeaderContainer .navMenu form button:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
 
     .headerContainer .headerNavbar .secondHeaderContainer .navMenu button {
         padding: 40px 20px !important;
@@ -62,6 +68,7 @@
         background: none;
         outline: none;
         font-size: 16px;
+        transition: 175ms background ease-in-out;
     }
 
 

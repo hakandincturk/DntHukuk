@@ -3,7 +3,7 @@
 }
 
 @section Styles{ 
-    <link href="~/css/headerBox.css" rel="stylesheet" />
+    
 }
 <body>
     <partial name="~/Views/Shared/_SideBar.cshtml" />
@@ -19,7 +19,9 @@
             </div>
         </div>
         <div class="mainContent">
-
+            @await Component.InvokeAsync("TumDosyalarBox")
+            @await Component.InvokeAsync("TumMuvekkillerBox")
+            @await Component.InvokeAsync("SiradakiDurusmalarBox")
         </div>
     </div>
 </body>

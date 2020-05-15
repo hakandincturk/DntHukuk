@@ -95,7 +95,7 @@ namespace DntHukuk.Web.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 //userId = Input.userId eklenebilir
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, userFirstName = Input.userFirstName, userLastName = Input.userLastName, userEmail = Input.Email ,userAccesLevel = Input.userAccesLevel};
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, userFirstName = Input.userFirstName, userLastName = Input.userLastName, userEmail = Input.Email , userImagePath = Input.userAccesLevel};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
