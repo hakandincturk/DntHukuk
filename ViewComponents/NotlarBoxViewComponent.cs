@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace DntHukuk.Web.ViewComponents
 {
-    public class SiradakiDurusma : ViewComponent
+    public class NotlarBoxViewComponent : ViewComponent
     {
-
-        public SiradakiDurusma()
+        public NotlarBoxViewComponent()
         {
 
         }
 
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            return View();
+        }
     }
 }

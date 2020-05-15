@@ -34,7 +34,7 @@ using DntHukuk.Web.ViewModel;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fe65f592d3fd334f900e762ee454ec99942a420d", @"/Views/Home/Denemesss.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"404c2f25dd3da088b474973ec300cab946693448", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"39ba7a82fbd9733b02549a47db3e1470346fd849", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Denemesss : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

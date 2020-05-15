@@ -1,0 +1,84 @@
+﻿    .headerBox {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        margin: 8px;
+        background: rgba(255, 255, 255, 0.32);
+        border-radius: 6px;
+        box-shadow: black 1px 1px 20px -9px;
+    }
+
+    .headerBox .headerBoxHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 10px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #333;
+    }
+
+    .headerBox .headerBoxHeader .headerBoxHeaderTitle {
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 6px;
+    }
+
+    .headerBox .headerBoxHeader img {
+        
+        max-width: 100%;
+    }
+
+    .headerBox .headerBoxHeader a {
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #333;
+    }
+
+    .headerBox .headerBoxContent {
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 16px;
+        padding-left: 6px;
+    }
+
+    .headerBox .headerBoxContentNotlar {
+        max-width:100%;
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .headerBox .headerBoxContentDosyalar label {
+        line-height: 14px !important;
+        font-size: 14px !important;
+    }
+
+    .headerBox .headerBoxContent label {
+        font-size: 16px;
+        font-weight:400;
+        line-height: 24px;
+        color: #333;
+        margin-left:9px;
+    }
+
+    .headerBox .headerBoxContent .firstLabel {
+        margin-left: -3px;
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        text-transform: uppercase;
+        margin-bottom:10px;
+    }

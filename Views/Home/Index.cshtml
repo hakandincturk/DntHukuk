@@ -2,10 +2,19 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
     <partial name="~/Views/Shared/_SideBar.cshtml" />
-    <div style="width:82vw; position:relative; left:calc(18vw - 10px); right:auto; top:auto; bottom:auto; height:100vh;">
-        <h1 class="display-4">Welcome</h1>
-        <p>DNT Hukuk - Yapım Aşamsında</p>
+    <div class="contentSide">
+        <div class="upperContent">
+            <div class="infoSide">
+                @await Component.InvokeAsync("SiradakiDurusmaBox")
+                @await Component.InvokeAsync("DosyalarBox")
+                @await Component.InvokeAsync("MuvekillerBox")
+            </div>
+            <div class="infoSide2">
+                @await Component.InvokeAsync("NotlarBox")
+            </div>
+        </div>
+        <div class="mainContent">
+
+        </div>
     </div>
-</div>
