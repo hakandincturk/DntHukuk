@@ -1,22 +1,23 @@
-﻿
+﻿@model Muvekkil
 @{
     Layout = null;
+    var muvekkilSayisi = ViewBag.MuvekkilSayisi;
 }
 
 <div class="headerBox">
     <div class="headerBoxHeader">
         <img src="~/pictures/user/user.svg" width="60" height="60" />
         <div class="headerBoxHeaderTitle">
-            <a href="#">Müvekkiller</a>
-            <label style="margin-top: 6px;">999</label>
+            <a asp-controller="Muvekkil" asp-action="Listele">Müvekkiller</a>
+            <label style="margin-top: 6px;" title="Toplam Müvekkil Sayısı">@muvekkilSayisi</label>
         </div>
 
     </div>
     <div class="headerBoxContent headerBoxContentDosyalar">
         <label class="firstLabel">En son Eklenen Müvekkil</label>
-        <label>Ad Soyad: Hakan DİNÇTÜRK</label>
-        <label>Telefon: +90 535 939 1672</label>
-        <label>E-Posta: hakan.dincturkk@gmail.com</label>
+        <label>Ad Soyad: @Model.muvekkilAdi @Model.muvekkilSoyAdi</label>
+        <label>Telefon: @Model.muvekkilTelefon.</label>
+        <label>E-Posta: @Model.muvekkilEmaik</label>
         <label>Sorumlu Avukat: Hakan DİNÇTÜRK</label>
     </div>
 </div>

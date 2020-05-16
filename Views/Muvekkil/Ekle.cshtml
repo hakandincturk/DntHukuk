@@ -1,0 +1,135 @@
+﻿@model Muvekkil
+
+@{
+    ViewData["Title"] = "Müvekkil Ekle";
+}
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+<div class="muvekkilWrapper">
+    <div class="muvekkilEkleHeader">
+        <img src="~/pictures/user/user.svg" width="45" height="45" />
+        <label class="muvekkilEkleHeaderTitle">Müvekkil Ekle</label>
+    </div>
+    <div class="muvekkilEkleContent">
+        <form asp-controller="Muvekkil" asp-action="Ekle" method="post">
+            <div class="muvekkilEkleContentRow1">
+                <div class="form-group">
+                    <label asp-for="muvekkilAdi" class="control-label">Müvekkil Adı</label>
+                    <input asp-for="muvekkilAdi" class="form-control" />
+                    <span asp-validation-for="muvekkilAdi" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="muvekkilSoyAdi" class="control-label">Müvekkil Soyadı</label>
+                    <input asp-for="muvekkilSoyAdi" class="form-control" />
+                    <span asp-validation-for="muvekkilSoyAdi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="muvekkilTc" class="control-label">Müvekkil TC</label>
+                    <input asp-for="muvekkilTc" class="form-control" />
+                    <span asp-validation-for="muvekkilTc" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow2">
+                <div class="form-group">
+                    <label asp-for="muvekkilEmaik" class="control-label">Müvekkil Email</label>
+                    <input asp-for="muvekkilEmaik" class="form-control" />
+                    <span asp-validation-for="muvekkilEmaik" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="muvekkilTelefon" class="control-label">Müvekkil Telefon</label>
+                    <input asp-for="muvekkilTelefon" class="form-control" />
+                    <span asp-validation-for="muvekkilTelefon" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow3">
+                <div class="form-group">
+                    <label asp-for="muvekkilAdres" class="control-label">Müvekkil Adres</label>
+                    <input asp-for="muvekkilAdres" class="form-control" />
+                    <span asp-validation-for="muvekkilAdres" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow4">
+                <div class="form-group">
+                    <label asp-for="muvekkilTuruId" class="control-label">Müvekkil Türü</label><br />
+                    @await Component.InvokeAsync("MuvekkilTurleriDropDown")
+                    <span asp-validation-for="muvekkilTuruId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="muvekkilSorumluAvukat" class="control-label">Müvekkil Sorumlu Avukat</label>
+                    <input asp-for="muvekkilSorumluAvukat" class="form-control" />
+                    <span asp-validation-for="muvekkilSorumluAvukat" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow2">
+                <div class="form-group">
+                    <label asp-for="muvekkilAciklama" class="control-label">Müvekkil Açıklama</label>
+                    <input asp-for="muvekkilAciklama" class="form-control" />
+                    <span asp-validation-for="muvekkilAciklama" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="muvekkilEvrakPath" class="control-label">Müvekkil Evrak</label>
+                    <input asp-for="muvekkilEvrakPath" class="form-control" />
+                    <span asp-validation-for="muvekkilEvrakPath" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="muvekkilEkleContentRow1" id="kurumType">
+                <div class="form-group">
+                    <label asp-for="muvekkilYetkiliIsim" class="control-label"></label>
+                    <input asp-for="muvekkilYetkiliIsim" class="form-control" />
+                    <span asp-validation-for="muvekkilYetkiliIsim" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="muvekkilVergiDairesi" class="control-label">Müvekkil Vergi Dairesi</label>
+                    <input asp-for="muvekkilVergiDairesi" class="form-control" />
+                    <span asp-validation-for="muvekkilVergiDairesi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="muvekkilVergiNo" class="control-label">Müvekkil Vergi No</label>
+                    <input asp-for="muvekkilVergiNo" class="form-control" />
+                    <span asp-validation-for="muvekkilVergiNo" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow5">
+                    <div>
+                        <button asp-controller="Muvekkil" asp-action="Listele" class="btn btn-danger">İptal</button>
+                        <button class="btn btn-primary">Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+<script>
+    $("#contentSide").addClass("contentSideMuvekkilEkle");
+    $("#kurumType").addClass("rowHidden");
+
+    $(document).ready(function () {
+        $("select.muvekkilTurleriDropDown").change(function () { 
+            var selectedType = $(this).children("option:selected").val();
+            if (selectedType == 1) {
+                console.log(selectedType)
+                $("#kurumType").removeClass("rowShow");
+                $("#kurumType").addClass("rowHidden");
+            }
+            else {
+                $("#kurumType").removeClass("rowHidden");
+                $("#kurumType").addClass("rowShow");
+            }
+                
+        });
+    });
+</script>
+}
+

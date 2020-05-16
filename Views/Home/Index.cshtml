@@ -6,21 +6,19 @@
     
 }
 <body>
-    <div class="contentSide">
-        <div class="upperContent">
-            <div class="infoSide">
-                @await Component.InvokeAsync("SiradakiDurusmaBox")
-                @await Component.InvokeAsync("DosyalarBox")
-                @await Component.InvokeAsync("MuvekillerBox")
-            </div>
-            <div class="infoSide2">
-                @await Component.InvokeAsync("NotlarBox")
-            </div>
+    <div class="upperContent">
+        <div class="infoSide">
+            @await Component.InvokeAsync("SiradakiDurusmaBox")
+            @await Component.InvokeAsync("DosyalarBox")
+            @await Component.InvokeAsync("MuvekillerBox")
         </div>
-        <div class="mainContent">
-            @await Component.InvokeAsync("TumDosyalarBox")
-            @await Component.InvokeAsync("TumMuvekkillerBox")
-            @await Component.InvokeAsync("SiradakiDurusmalarBox")
+        <div class="infoSide2">
+            @await Component.InvokeAsync("NotlarBox")
         </div>
+    </div>
+    <div class="mainContent">
+        @await Component.InvokeAsync("TumDosyalarBox")
+        @await Component.InvokeAsync("TumMuvekkillerBox")
+        @await Component.InvokeAsync("SiradakiDurusmalarBox")
     </div>
 </body>

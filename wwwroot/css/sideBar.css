@@ -110,6 +110,8 @@
         width: 100%;
         font-size: 16px;
         font-weight: 400;
+        color:#333;
+        text-decoration:none;
         width: 100%;
         cursor: pointer;
         padding: 10px 0px 10px 30px;
@@ -122,12 +124,12 @@
         background:rgba(0,0,0, 0.1);
     }
 
-        .sideBarContainer .sideBarWrapper .sideBarMenu ul li:hover .subMenu {
-            margin-top: 0px;
-            opacity: 1;
-            height: auto;
-            position: relative;
-        }
+    .sideBarContainer .sideBarWrapper .sideBarMenu ul li:hover .subMenu {
+        margin-top: 0px;
+        opacity: 1;
+        height: auto;
+        position: relative;
+    }
 
     .sideBarContainer .sideBarWrapper .sideBarMenu ul li:hover a .ki {
         transform: rotate(0deg);

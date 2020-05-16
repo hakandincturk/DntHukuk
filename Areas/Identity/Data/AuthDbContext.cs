@@ -18,6 +18,7 @@ namespace DntHukuk.Web.Data
         }
 
         public DbSet<MuvekkilTurleri> muvekkilTurleri { get; set; }
+        public DbSet<Muvekkil> Muvekkil { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

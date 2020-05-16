@@ -61,7 +61,7 @@ html {
 body {
     /* Margin bottom by footer height */
     font-family: "Exo 2.0", sans-serif;
-    background: #f5f4f4;
+    background: #f5f4f4 !important;
 }
 
 .container2{
@@ -72,10 +72,15 @@ body {
         width: 82vw;
         position: relative;
         background: #f5f5f5;
+        left:calc(18vw - 10px);
         right: auto;
         top: auto;
         bottom: auto;
         padding:24px 10px 14px 10px;
+    }
+
+    .contentSideMuvekkilEkle{
+        height:calc(100vh - 100px);
     }
 
     .contentSide .upperContent {

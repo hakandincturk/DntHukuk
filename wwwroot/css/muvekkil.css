@@ -1,0 +1,81 @@
+﻿.muvekkilWrapper{
+    padding:0px 10px;
+}
+
+    .muvekkilWrapper .muvekkilEkleHeader {
+        height: 50px;
+        padding: 0px 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+    }
+
+    .muvekkilWrapper .muvekkilEkleHeader .muvekkilEkleHeaderTitle {
+        margin-left:10px;
+        font-weight:700;
+        font-size:16px;
+        color:#333;
+        text-transform:uppercase;
+    }
+
+    .muvekkilEkleContent{
+        margin-top:20px;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow1 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow1 .form-group{
+        width: 34%;
+        box-sizing:border-box;
+        padding:8px 12px;
+        margin-bottom:12px;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow2 .form-group {
+        width: 50%;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow3 .form-group {
+        width: 100%;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow4 .form-group {
+        width: 50%;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow4 .form-group select {
+        border: 1px solid rgba(0,0,0, 0.3);
+        padding: 10px;
+        margin-left: 10px;
+        background: whitesmoke;
+        outline:none;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow1 button {
+        width: 28%;
+        margin: 10px 10px 0px 20px;
+        padding: 9px 15px;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow5{
+       display:flex;
+       align-items:center;
+       justify-content:flex-end;
+    }
+
+    .rowHidden{
+        display:none !important;
+    }
+
+    .rowShow {
+        display: flex;
+    }
+

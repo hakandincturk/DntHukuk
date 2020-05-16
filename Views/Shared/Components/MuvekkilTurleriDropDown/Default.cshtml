@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<MuvekkilTurleri>
 
-<select name="muvekkilTurleriDropDown">
+<select class="muvekkilTurleriDropDown" name="muvekkilTurleriDropDown">
     @foreach (var item in Model)
     {
         <option value="@item.muvekkilTuruId">@item.muvekkilTuruAdi</option>

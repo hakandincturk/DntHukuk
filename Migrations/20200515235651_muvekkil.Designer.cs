@@ -4,14 +4,16 @@ using DntHukuk.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DntHukuk.Web.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200515235651_muvekkil")]
+    partial class muvekkil
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -137,9 +139,6 @@ namespace DntHukuk.Web.Migrations
 
                     b.Property<int>("muvekkilTuruId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("muvekkilUyelikTarihi")
-                        .HasColumnType("DateTime");
 
                     b.Property<string>("muvekkilVergiDairesi")
                         .HasColumnType("nvarchar(100)");
