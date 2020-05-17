@@ -2,6 +2,7 @@
 @{
     Layout = null;
     var muvekkilSayisi = ViewBag.MuvekkilSayisi;
+    var sorumluAvukatIsmı = await DntHukuk.Web.ViewComponents.MuvekillerBoxViewComponent.AvukatIdToName(Model.muvekkilSorumluAvukat);
 }
 
 <div class="headerBox">
@@ -18,6 +19,6 @@
         <label>Ad Soyad: @Model.muvekkilAdi @Model.muvekkilSoyAdi</label>
         <label>Telefon: @Model.muvekkilTelefon.</label>
         <label>E-Posta: @Model.muvekkilEmaik</label>
-        <label>Sorumlu Avukat: Hakan DİNÇTÜRK</label>
+        <label>Sorumlu Avukat: @sorumluAvukatIsmı</label>
     </div>
 </div>

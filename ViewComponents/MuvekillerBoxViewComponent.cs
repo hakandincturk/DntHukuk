@@ -1,5 +1,7 @@
-﻿using DntHukuk.Web.Data;
+﻿using DntHukuk.Web.Areas.Identity.Data;
+using DntHukuk.Web.Data;
 using DntHukuk.Web.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,10 +15,19 @@ namespace DntHukuk.Web.ViewComponents
     {
 
         private readonly AuthDbContext _context;
+        private static UserManager<ApplicationUser> _userManager;
 
-        public MuvekillerBoxViewComponent(AuthDbContext context)
+        public MuvekillerBoxViewComponent(AuthDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
+        }
+
+        public static async Task<string> AvukatIdToName(Guid id)
+        {
+            var user =await  _userManager.FindByIdAsync(id.ToString());
+            string avukatIsmi = user.userFirstName + " " + user.userLastName;
+            return avukatIsmi;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()

@@ -1,119 +1,78 @@
-﻿@model IEnumerable<DntHukuk.Web.Models.Muvekkil>
+﻿@model IEnumerable<Muvekkil>
 
 @{
-    ViewData["Title"] = "Listele";
+    ViewData["Title"] = "Müvekkil Listele";
 }
 
-<h1>Listele</h1>
-
-<p>
-    <a asp-action="Ekle">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilAdi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilSoyAdi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilTc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilTuruId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilSorumluAvukat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilEmaik)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilTelefon)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilAdres)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilAciklama)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilEvrakPath)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilVergiDairesi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilVergiNo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilYetkiliIsim)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.muvekkilUyelikTarihi)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilAdi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilSoyAdi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilTc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilTuruId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilSorumluAvukat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilEmaik)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilTelefon)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilAdres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilAciklama)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilEvrakPath)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilVergiDairesi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilVergiNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilYetkiliIsim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.muvekkilUyelikTarihi)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
 }
-    </tbody>
-</table>
+
+<div class="muvekkilWrapper">
+    <div class="muvekkilEkleHeader muvekkilListeleHeader">
+        <img src="~/pictures/user/user.svg" width="45" height="45" />
+        <label class="muvekkilEkleHeaderTitle">Müvekkil Listele</label>
+    </div>
+    <div class="muvekkilEkleContent muvekkilListeleContent">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.muvekkilAdi) Soyadı
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.muvekkilTuruId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.muvekkilSorumluAvukat)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.muvekkilEmaik)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.muvekkilTelefon)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.muvekkilAdi) @Html.DisplayFor(modelItem => item.muvekkilSoyAdi)
+                        </td>
+                        <td>
+                            @if (item.muvekkilTuruId == 0)
+                            {
+                                <label>Şahıs</label>
+                            }
+                            else if (item.muvekkilTuruId == 1)
+                            {
+                                <label>Kurum (Kamu)</label>
+                            }
+                            else
+                            {
+                                <label>Kurum (Özel)</label>
+                            }
+                        </td>
+                        <td>
+                            @await DntHukuk.Web.Controllers.MuvekkilController.AvukatIdToName(item.muvekkilSorumluAvukat)
+                        </td>
+                        <td>
+                            @item.muvekkilEmaik
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.muvekkilTelefon)
+                        </td>
+                        <td>
+                            <a asp-controller="Muvekkil" asp-action="Detay" asp-route-id="@item.muvekkilId" title="Görüntüle"><i class="far fa-eye i"></i></a> |
+                            <a asp-controller="Muvekkil" asp-action="Duzenle" asp-route-id="@item.muvekkilId" title="Düzenle"><i class="far fa-edit i"></i></a> |
+                            <a asp-controller="Muvekkil" asp-action="Sil" asp-route-id="@item.muvekkilId" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

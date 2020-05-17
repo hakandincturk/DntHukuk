@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using DntHukuk.Web.Data;
+using DntHukuk.Web.Controllers;
 
 namespace DntHukuk.Web
 {
@@ -27,6 +28,7 @@ namespace DntHukuk.Web
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddScoped<MuvekkilController>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

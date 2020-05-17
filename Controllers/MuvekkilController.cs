@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DntHukuk.Web.Data;
 using DntHukuk.Web.Models;
+using DntHukuk.Web.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace DntHukuk.Web.Controllers
 {
     public class MuvekkilController : Controller
     {
         private readonly AuthDbContext _context;
+        private static UserManager<ApplicationUser> _userManager;
 
-        public MuvekkilController(AuthDbContext context)
+        
+        public MuvekkilController(AuthDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Muvekkils
@@ -25,8 +30,15 @@ namespace DntHukuk.Web.Controllers
             return View(await _context.Muvekkil.ToListAsync());
         }
 
+        public static async Task<string> AvukatIdToName(Guid id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            string avukatIsmi = user.userFirstName + " " + user.userLastName;
+            return avukatIsmi;
+        }
+
         // GET: Muvekkils/Details/5
-        public async Task<IActionResult> Details(Guid? id)
+        public async Task<IActionResult> Detay(Guid? id)
         {
             if (id == null)
             {

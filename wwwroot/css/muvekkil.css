@@ -1,6 +1,6 @@
-﻿.muvekkilWrapper{
-    padding:0px 10px;
-}
+﻿    .muvekkilWrapper{
+        padding:0px 10px;
+    }
 
     .muvekkilWrapper .muvekkilEkleHeader {
         height: 50px;
@@ -78,4 +78,38 @@
     .rowShow {
         display: flex;
     }
+
+    .muvekkilWrapper .muvekkilListeleHeader{
+        border-bottom:none;
+    }
+
+    .muvekkilWrapper .muvekkilListeleContent {
+        margin-top: 10px !important;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent table {
+        text-align: center;
+    }
+    
+    .muvekkilWrapper .muvekkilEkleContent a {
+        margin-left:2px;
+        font-size:16px;
+        color:#333;
+        transition:175ms font-size ease-in-out;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent a:hover {
+        color: rgb(239, 108, 60);
+        font-size: 18px;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent a:first-child:hover {
+        color: #007bff;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent a:last-child:hover {
+        color: #dc3545;
+    }
+
+
 
