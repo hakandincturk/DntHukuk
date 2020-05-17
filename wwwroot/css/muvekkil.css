@@ -111,5 +111,19 @@
         color: #dc3545;
     }
 
+    .muvekkilWrapper .muvekkilDetayContent {
+        font-size: 15px;
+        padding: 20px;
+        margin-top: 15px !important;
+    }
+
+    .muvekkilWrapper .muvekkilDetayContent .muvekkilListeleContentRow2{
+        border-bottom:1px solid rgba(0,0,0, 0.20)
+    }
+
+    .muvekkilWrapper .muvekkilDetayContent .muvekkilListeleContentRow2 .row {
+        margin: 15px 0px 10px 0px !important;
+    }
+
 
 

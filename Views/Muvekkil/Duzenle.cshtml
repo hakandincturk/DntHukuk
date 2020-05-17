@@ -1,8 +1,9 @@
-﻿@model Muvekkil
+﻿@model DntHukuk.Web.Models.Muvekkil
 
 @{
-    ViewData["Title"] = "Müvekkil Ekle";
+    ViewData["Title"] = "Duzenle";
 }
+
 
 @section Styles{
     <link href="~/css/muvekkil.css" rel="stylesheet" />
@@ -14,7 +15,12 @@
         <label class="muvekkilEkleHeaderTitle">Müvekkil Ekle</label>
     </div>
     <div class="muvekkilEkleContent">
-        <form asp-controller="Muvekkil" asp-action="Ekle" method="post">
+        <form asp-action="Duzenle">
+            <div class="form-group">
+                <label asp-for="muvekkilId" class="control-label" hidden></label>
+                <input asp-for="muvekkilId" class="form-control" hidden/>
+                <span asp-validation-for="muvekkilId" class="text-danger" hidden></span>
+            </div>
             <div class="muvekkilEkleContentRow1">
                 <div class="form-group">
                     <label asp-for="muvekkilAdi" class="control-label">Müvekkil Adı</label>
@@ -58,7 +64,7 @@
             <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow4">
                 <div class="form-group">
                     <label asp-for="muvekkilTuruId" class="control-label">Müvekkil Türü</label><br />
-                    @await Component.InvokeAsync("MuvekkilTurleriDropDown")
+                    @await Component.InvokeAsync("MuvekkilTurleriDropDown", new { muvekkilTuruId = Model.muvekkilTuruId})
                     <span asp-validation-for="muvekkilTuruId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -101,7 +107,7 @@
             <div>
                 <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow5">
                     <button asp-controller="Muvekkil" asp-action="Listele" class="btn btn-danger">İptal</button>
-                    <button class="btn btn-primary">Ekle</button>
+                    <button class="btn btn-primary">Düzenle</button>
                 </div>
             </div>
         </form>
@@ -109,25 +115,33 @@
 </div>
 
 @section Scripts{
-<script>
-    $("#contentSide").addClass("contentSideMuvekkilEkle");
-    $("#kurumType").addClass("rowHidden");
+    <script>
+        $("#contentSide").addClass("contentSideMuvekkilEkle");
+        var selectedType = $("select.muvekkilTurleriDropDown").children("option:selected").val();
+        if (selectedType == 1) {
+            console.log(selectedType)
+            $("#kurumType").removeClass("rowShow");
+            $("#kurumType").addClass("rowHidden");
+        }
+        else {
+            $("#kurumType").removeClass("rowHidden");
+            $("#kurumType").addClass("rowShow");
+        }
 
-    $(document).ready(function () {
-        $("select.muvekkilTurleriDropDown").change(function () { 
-            var selectedType = $(this).children("option:selected").val();
-            if (selectedType == 1) {
-                console.log(selectedType)
-                $("#kurumType").removeClass("rowShow");
-                $("#kurumType").addClass("rowHidden");
-            }
-            else {
-                $("#kurumType").removeClass("rowHidden");
-                $("#kurumType").addClass("rowShow");
-            }
-                
+        $(document).ready(function () {
+            $("select.muvekkilTurleriDropDown").change(function () {
+                var selectedType = $(this).children("option:selected").val();
+                if (selectedType == 1) {
+                    console.log(selectedType)
+                    $("#kurumType").removeClass("rowShow");
+                    $("#kurumType").addClass("rowHidden");
+                }
+                else {
+                    $("#kurumType").removeClass("rowHidden");
+                    $("#kurumType").addClass("rowShow");
+                }
+
+            });
         });
-    });
-</script>
+    </script>
 }
-

@@ -24,6 +24,11 @@ namespace DntHukuk.Web.Controllers
             _userManager = userManager;
         }
 
+        public IActionResult Index()
+        {
+            return RedirectToAction("Listele");
+        }
+
         // GET: Muvekkils
         public async Task<IActionResult> Listele()
         {
@@ -71,16 +76,17 @@ namespace DntHukuk.Web.Controllers
             if (ModelState.IsValid)
             {
                 muvekkil.muvekkilId = Guid.NewGuid();
+                muvekkil.muvekkilSorumluAvukat = Guid.Parse(HttpContext.Request.Form["sorumluAvukatDropDown"]);
                 muvekkil.muvekkilTuruId = Convert.ToInt32(HttpContext.Request.Form["muvekkilTurleriDropDown"]);
                 _context.Add(muvekkil);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Listele");
             }
             return View(muvekkil);
         }
 
         // GET: Muvekkils/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> Duzenle(Guid? id)
         {
             if (id == null)
             {
@@ -100,7 +106,7 @@ namespace DntHukuk.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("muvekkilId,muvekkilAdi,muvekkilSoyAdi,muvekkilTc,muvekkilTuruId,muvekkilSorumluAvukat,muvekkilEmaik,muvekkilTelefon,muvekkilAdres,muvekkilAciklama,muvekkilEvrakPath,muvekkilVergiDairesi,muvekkilVergiNo,muvekkilYetkiliIsim")] Muvekkil muvekkil)
+        public async Task<IActionResult> Duzenle(Guid id, [Bind("muvekkilId,muvekkilAdi,muvekkilSoyAdi,muvekkilTc,muvekkilTuruId,muvekkilSorumluAvukat,muvekkilEmaik,muvekkilTelefon,muvekkilAdres,muvekkilAciklama,muvekkilEvrakPath,muvekkilVergiDairesi,muvekkilVergiNo,muvekkilYetkiliIsim")] Muvekkil muvekkil)
         {
             if (id != muvekkil.muvekkilId)
             {
@@ -111,6 +117,9 @@ namespace DntHukuk.Web.Controllers
             {
                 try
                 {
+                    muvekkil.muvekkilUyelikTarihi = Convert.ToDateTime(await muvekkilAsilUyelikTarihi(id));
+                    muvekkil.muvekkilSorumluAvukat = Guid.Parse(HttpContext.Request.Form["sorumluAvukatDropDown"]);
+                    muvekkil.muvekkilTuruId = Convert.ToInt32(HttpContext.Request.Form["muvekkilTurleriDropDown"]);
                     _context.Update(muvekkil);
                     await _context.SaveChangesAsync();
                 }
@@ -125,13 +134,19 @@ namespace DntHukuk.Web.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Listele");
             }
             return View(muvekkil);
         }
 
+        public async Task<DateTime> muvekkilAsilUyelikTarihi(Guid id)
+        {
+            var muvekkil = await _context.Muvekkil.AsNoTracking().Where(p=> p.muvekkilId == id).FirstOrDefaultAsync();
+            return muvekkil.muvekkilUyelikTarihi;
+        }
+
         // GET: Muvekkils/Delete/5
-        public async Task<IActionResult> Delete(Guid? id)
+        public async Task<IActionResult> Sil(Guid? id)
         {
             if (id == null)
             {
@@ -151,12 +166,12 @@ namespace DntHukuk.Web.Controllers
         // POST: Muvekkils/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        public async Task<IActionResult> SilOnay(Guid id)
         {
             var muvekkil = await _context.Muvekkil.FindAsync(id);
             _context.Muvekkil.Remove(muvekkil);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Listele");
         }
 
         private bool MuvekkilExists(Guid id)

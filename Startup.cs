@@ -28,7 +28,6 @@ namespace DntHukuk.Web
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddScoped<MuvekkilController>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

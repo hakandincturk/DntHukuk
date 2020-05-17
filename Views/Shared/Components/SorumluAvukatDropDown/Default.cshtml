@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DntHukuk.Web.Areas.Identity.Data.ApplicationUser>
+
+@{
+    var sorumluAvukatId = ViewBag.sorumluAvukatId;
+}
+
+@if (sorumluAvukatId != null)
+{
+    <select class="sorumluAvukatDropDown" name="sorumluAvukatDropDown" readonly>
+        @foreach (var item in Model)
+        {
+            if (item.Id == sorumluAvukatId)
+            {
+                <option value="@item.Id" selected>@item.userFirstName @item.userLastName</option>
+            }
+            else
+            {
+                <option value="@item.Id">@item.userFirstName @item.userLastName</option>
+            }
+        }
+    </select>
+}
+else
+{
+    <select class="sorumluAvukatDropDown" name="sorumluAvukatDropDown">
+        @foreach (var item in Model)
+        {
+            <option value="@item.Id">@item.userFirstName @item.userLastName</option>
+        }
+    </select>
+}

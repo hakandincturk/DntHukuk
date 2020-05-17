@@ -1,8 +1,29 @@
 ﻿@model IEnumerable<MuvekkilTurleri>
 
-<select class="muvekkilTurleriDropDown" name="muvekkilTurleriDropDown">
-    @foreach (var item in Model)
-    {
-        <option value="@item.muvekkilTuruId">@item.muvekkilTuruAdi</option>
-    }
-</select>
+@{
+    var seciliMuvekkilTuruId = ViewBag.muvekkilTuruId;
+}
+
+@if (seciliMuvekkilTuruId != null)
+{
+    <select class="muvekkilTurleriDropDown" name="muvekkilTurleriDropDown" readonly>
+        @foreach (var item in Model)
+        {
+            if (item.muvekkilTuruId == seciliMuvekkilTuruId){
+                <option value="@item.muvekkilTuruId" selected>@item.muvekkilTuruAdi</option>
+            }
+            else { 
+                <option value="@item.muvekkilTuruId">@item.muvekkilTuruAdi</option>
+            }
+        }
+    </select>
+}
+else
+{
+    <select class="muvekkilTurleriDropDown" name="muvekkilTurleriDropDown">
+        @foreach (var item in Model)
+        {
+            <option value="@item.muvekkilTuruId">@item.muvekkilTuruAdi</option>
+        }
+    </select>
+}

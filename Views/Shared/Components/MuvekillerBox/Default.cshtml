@@ -16,8 +16,8 @@
     </div>
     <div class="headerBoxContent headerBoxContentDosyalar">
         <label class="firstLabel">En son Eklenen Müvekkil</label>
-        <label>Ad Soyad: @Model.muvekkilAdi @Model.muvekkilSoyAdi</label>
-        <label>Telefon: @Model.muvekkilTelefon.</label>
+        <label>Ad Soyad: <a asp-controller="Muvekkil" asp-action="Detay" asp-route-id="@Model.muvekkilId">@Model.muvekkilAdi @Model.muvekkilSoyAdi</a></label>
+        <label>Telefon: @Model.muvekkilTelefon</label>
         <label>E-Posta: @Model.muvekkilEmaik</label>
         <label>Sorumlu Avukat: @sorumluAvukatIsmı</label>
     </div>

@@ -231,3 +231,6 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\MuvekkilTurleri\Create.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Muvekkil\Ekle.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Muvekkil\Listele.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Muvekkil\Detay.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Muvekkil\Duzenle.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\SorumluAvukatDropDown\Default.cshtml.g.cs

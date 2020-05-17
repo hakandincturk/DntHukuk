@@ -43,11 +43,11 @@
                             @Html.DisplayFor(modelItem => item.muvekkilAdi) @Html.DisplayFor(modelItem => item.muvekkilSoyAdi)
                         </td>
                         <td>
-                            @if (item.muvekkilTuruId == 0)
+                            @if (item.muvekkilTuruId == 1)
                             {
                                 <label>Şahıs</label>
                             }
-                            else if (item.muvekkilTuruId == 1)
+                            else if (item.muvekkilTuruId == 2)
                             {
                                 <label>Kurum (Kamu)</label>
                             }

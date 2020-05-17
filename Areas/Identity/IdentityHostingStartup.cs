@@ -1,5 +1,6 @@
 ﻿using System;
 using DntHukuk.Web.Areas.Identity.Data;
+using DntHukuk.Web.Controllers;
 using DntHukuk.Web.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
