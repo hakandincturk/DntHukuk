@@ -1,10 +1,8 @@
-﻿@model IcraHukukuMuvekkilKonumu
+﻿@model IdareMahkemesiMuvekkilKonumu
 
 @{
     ViewData["Title"] = "Icra Hukuku Muvekkil Konumu Ekle";
 }
-
-
 
 @section Styles{
     <link href="~/css/muvekkil.css" rel="stylesheet" />
@@ -15,12 +13,12 @@
         <label class="muvekkilEkleHeaderTitle">İdare Mahkemesi Müvekkil Konumu Ekle</label>
     </div>
     <div class="muvekkilEkleContent">
-        <form asp-controller="IcraHukukuMuvekkilKonumu" asp-action="IcraHukukuMuvekkilKonumuEkle" method="post">
+        <form asp-controller="IdareMahkemesiMuvekkilKonumu" asp-action="IdareMahkemesiMuvekkilKonumuEkle" method="post">
             <div class="muvekkilEkleContentRow1">
                 <div class="form-group">
-                    <label asp-for="IcraHukukMuvekkilKonumu" class="control-label"></label>
-                    <input asp-for="IcraHukukMuvekkilKonumu" class="form-control" />
-                    <span asp-validation-for="IcraHukukMuvekkilKonumu" class="text-danger"></span>
+                    <label asp-for="idareMahkemesiMuvekkilKonumuTuru" class="control-label"></label>
+                    <input asp-for="idareMahkemesiMuvekkilKonumuTuru" class="form-control" />
+                    <span asp-validation-for="idareMahkemesiMuvekkilKonumuTuru" class="text-danger"></span>
                 </div>
                 <div class="muvekkilEkleContentRow5">
                     <button class="btn btn-primary ">Ekle</button>
