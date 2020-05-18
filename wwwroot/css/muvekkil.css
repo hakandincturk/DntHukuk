@@ -125,5 +125,31 @@
         margin: 15px 0px 10px 0px !important;
     }
 
+    .muvekkilWrapper .muvekkilListeleContent .muvekkilSilFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 15px 0px 10px 0px;
+}
+
+    .muvekkilWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol2 {
+        width:28%;
+    }
+
+    .muvekkilWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol1 {
+        margin-right: 15px;
+    }
+    
+    .muvekkilWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol2 form input{
+        width: 100%;
+    }
+
+.muvekkilSilH3 {
+    padding: 20px;
+    margin-top: 15px;
+}
+
 
 

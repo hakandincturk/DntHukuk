@@ -164,7 +164,7 @@ namespace DntHukuk.Web.Controllers
         }
 
         // POST: Muvekkils/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Sil")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> SilOnay(Guid id)
         {
