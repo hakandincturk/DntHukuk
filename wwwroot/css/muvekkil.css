@@ -90,6 +90,10 @@
     .muvekkilWrapper .muvekkilEkleContent table {
         text-align: center;
     }
+
+    .muvekkilWrapper .muvekkilEkleContent table td {
+        vertical-align:inherit;
+    }
     
     .muvekkilWrapper .muvekkilEkleContent a {
         margin-left:2px;
@@ -146,10 +150,65 @@
         width: 100%;
     }
 
-.muvekkilSilH3 {
-    padding: 20px;
-    margin-top: 15px;
-}
+    .muvekkilSilH3 {
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumuHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumuHeader .icraHukukuMuvekkilKonumuHeaderButtons a{
+        color:#333;
+        transition:175ms all ease-in-out;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumuHeader .icraHukukuMuvekkilKonumuHeaderButtons a:first-child:hover {
+        color: #007bff;
+        font-size:17px;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu {
+        text-align: left;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr {
+
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a{
+        margin-left: 2px;
+        font-size: 16px;
+        color: #333;
+        transition: 175ms font-size ease-in-out;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a {
+        margin-left: 2px;
+        font-size: 16px;
+        color: #333;
+        transition: 175ms font-size ease-in-out;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent form .muvekkilEkleContentRow1 .muvekkilEkleContentRow5 button {
+        width: 45%;
+    }
+    
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:hover {
+        font-size:17px;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:first-child:hover {
+        color: rgb(239, 108, 60);
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:last-child:hover {
+        color: #dc3545;
+    }
 
 
 

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "YoneticiAyarlariListele";
+}
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+
+@await Component.InvokeAsync("IcraHukukuMuvekkilKonumuBox")
+@await Component.InvokeAsync("HukukMahkemesiMuvekkilKonumuBox")
+
+
+
+

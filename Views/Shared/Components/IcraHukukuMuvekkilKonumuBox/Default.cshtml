@@ -1,0 +1,45 @@
+﻿@model IEnumerable<IcraHukukuMuvekkilKonumu>
+
+@{
+    Layout = null;
+}
+
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet"/>
+}
+
+<div class="muvekkilWrapper">
+    <div class="muvekkilEkleHeader muvekkilListeleHeader icraHukukuMuvekkilKonumuHeader">
+        <label class="muvekkilEkleHeaderTitle">İcra Hukuku Müvekkil Konumu</label>
+        <div class="icraHukukuMuvekkilKonumuHeaderButtons">
+            <a asp-controller="IcraHukukuMuvekkilKonumu" asp-action="IcraHukukuMuvekkilKonumuEkle" title="Ekle"><i class="fas fa-plus i"></i></a>
+        </div>
+    </div>
+    <div class="icraHukukuMuvekkilKonumu muvekkilListeleContent">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IcraHukukMuvekkilKonumu)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IcraHukukMuvekkilKonumu)
+                        </td>
+                        <td style="width:70px;">
+                            <a asp-controller="IcraHukukuMuvekkilKonumu" asp-action="IcraHukukuMuvekkilKonumuDuzenle" asp-route-id="@item.Id" title="Duzenle"><i class="far fa-edit i"></i></a>
+                            <a asp-controller="IcraHukukuMuvekkilKonumu" asp-action="IcraHukukuMuvekkilKonumuSil" asp-route-id="@item.Id" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

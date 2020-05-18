@@ -4,14 +4,16 @@ using DntHukuk.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DntHukuk.Web.Migrations
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200518122329_IcraHukukuMuvekkilKonumuTekrar")]
+    partial class IcraHukukuMuvekkilKonumuTekrar
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -98,22 +100,6 @@ namespace DntHukuk.Web.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("DntHukuk.Web.Models.HukukMahkemesiMuvekkilKonumu", b =>
-                {
-                    b.Property<int>("hukukMahkemesiMuvekkilKonumuId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("hukukMahkemesiMuvekkilKonumuTuru")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(55)");
-
-                    b.HasKey("hukukMahkemesiMuvekkilKonumuId");
-
-                    b.ToTable("HukukMahkemesiMuvekkilKonumu");
                 });
 
             modelBuilder.Entity("DntHukuk.Web.Models.IcraHukukuMuvekkilKonumu", b =>

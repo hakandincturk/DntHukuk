@@ -1,9 +1,4 @@
-﻿
-
-<div>
-
-</div>
-<div class="sideBarContainer">
+﻿<div class="sideBarContainer">
     <div class="sideBarWrapper">
         <img src="~/pictures/blank-profile.png" width="100" height="100"/>
         <label class="userNameLabel">Hakan DİNÇTÜRK</label>
@@ -58,6 +53,10 @@
 
                 <li>
                     <a>Ayarlar</a>
+                    <div class="subMenu">
+                        <a asp-controller="Ayarlar" asp-action="YoneticiAyarlariListele" class="subMenuItem">Yönetici Ayarları</a>
+                        <a class="subMenuItem">Personel Listesi</a>
+                    </div>
                 </li>
             </ul>
         </div>

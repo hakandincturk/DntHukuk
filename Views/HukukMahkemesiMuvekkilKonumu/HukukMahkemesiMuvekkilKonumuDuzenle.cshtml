@@ -1,0 +1,39 @@
+﻿@model HukukMahkemesiMuvekkilKonumu
+
+@{
+    ViewData["Title"] = "Hukuk Mahkemesi Muvekkil Konumu Düzenle";
+}
+
+
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+<div class="muvekkilWrapper">
+    <div class="muvekkilEkleHeader">
+        <label class="muvekkilEkleHeaderTitle">Hukuk Mahkemesi Muvekkil Konumu Düzenle</label>
+    </div>
+    <div class="muvekkilEkleContent">
+        <form asp-controller="HukukMahkemesiMuvekkilKonumu" asp-action="HukukMahkemesiMuvekkilKonumuDuzenle" method="post">
+            <div class="muvekkilEkleContentRow1">
+
+                <div class="form-group">
+                    <label asp-for="hukukMahkemesiMuvekkilKonumuTuru" class="control-label"></label>
+                    <input asp-for="hukukMahkemesiMuvekkilKonumuTuru" class="form-control" />
+                    <span asp-validation-for="hukukMahkemesiMuvekkilKonumuTuru" class="text-danger"></span>
+                </div>
+                <div class="muvekkilEkleContentRow5">
+                    <button class="btn btn-primary ">Düzenle</button>
+                    <button asp-controller="Ayarlar" asp-action="YoneticiAyarlariListele" class="btn btn-danger">İptal</button>
+                </div>
+                <div class="form-group">
+                    <label asp-for="hukukMahkemesiMuvekkilKonumuId" class="control-label" hidden></label>
+                    <input asp-for="hukukMahkemesiMuvekkilKonumuId" class="form-control" hidden readonly />
+                    <span asp-validation-for="hukukMahkemesiMuvekkilKonumuId" class="text-danger" hidden></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
