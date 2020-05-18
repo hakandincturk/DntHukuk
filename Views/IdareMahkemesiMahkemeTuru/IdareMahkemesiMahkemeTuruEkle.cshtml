@@ -1,0 +1,32 @@
+﻿@model IdareMahkemesiMahkemeTuru
+
+@{
+    ViewData["Title"] = "Idare Mahkemesi Mahkeme Turu Ekle";
+}
+
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+<div class="muvekkilWrapper">
+    <div class="muvekkilEkleHeader">
+        <label class="muvekkilEkleHeaderTitle">Idare Mahkemesi Mahkeme Türü Ekle</label>
+    </div>
+    <div class="muvekkilEkleContent">
+        <form asp-controller="IdareMahkemesiMahkemeTuru" asp-action="IdareMahkemesiMahkemeTuruEkle" method="post">
+            <div class="muvekkilEkleContentRow1">
+                <div class="form-group">
+                    <label asp-for="idareMahkemesiMahkemeTuruu" class="control-label"></label>
+                    <input asp-for="idareMahkemesiMahkemeTuruu" class="form-control" />
+                    <span asp-validation-for="idareMahkemesiMahkemeTuruu" class="text-danger"></span>
+                </div>
+                <div class="muvekkilEkleContentRow5">
+                    <button class="btn btn-primary ">Ekle</button>
+                    <button asp-controller="Ayarlar" asp-action="YoneticiAyarlariListele" class="btn btn-danger">İptal</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+

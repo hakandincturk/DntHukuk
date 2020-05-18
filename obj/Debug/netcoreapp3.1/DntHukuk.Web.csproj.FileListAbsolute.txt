@@ -257,3 +257,8 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IdareMahkemesiMuvekkilKonumu\Index.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\IdareMahkemesiMuvekkilKonumuBox\Default.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IdareMahkemesiMuvekkilKonumu\IdareMahkemesiMuvekkilKonumuEkle.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IdareMahkemesiMahkemeTuru\Index.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\IdareMahkemesiMahkemeTuruBox\Default.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IdareMahkemesiMahkemeTuru\IdareMahkemesiMahkemeTuruDuzenle.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IdareMahkemesiMahkemeTuru\IdareMahkemesiMahkemeTuruEkle.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IdareMahkemesiMahkemeTuru\IdareMahkemesiMahkemeTuruSil.cshtml.g.cs
