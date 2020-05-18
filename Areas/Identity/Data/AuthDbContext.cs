@@ -19,10 +19,9 @@ namespace DntHukuk.Web.Data
 
         public DbSet<MuvekkilTurleri> muvekkilTurleri { get; set; }
         public DbSet<Muvekkil> Muvekkil { get; set; }
-        
         public DbSet<IcraHukukuMuvekkilKonumu> IcraHukukuMuvekkilKonumu { get; set; }
-
         public DbSet<HukukMahkemesiMuvekkilKonumu> HukukMahkemesiMuvekkilKonumu { get; set; }
+        public DbSet<CezaMahkemesiMuvekkilKonumu> CezaMahkemesiMuvekkilKonumu { get; set; }
         
 
         protected override void OnModelCreating(ModelBuilder builder)

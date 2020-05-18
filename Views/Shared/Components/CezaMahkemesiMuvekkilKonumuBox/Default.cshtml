@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CezaMahkemesiMuvekkilKonumu>
+
+
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+<div class="muvekkilWrapper yoneticiAyarlariListeleBox">
+    <div class="muvekkilEkleHeader muvekkilListeleHeader icraHukukuMuvekkilKonumuHeader">
+        <label class="muvekkilEkleHeaderTitle">Ceza Mahkemesi Müvekkil Konumu</label>
+        <div class="icraHukukuMuvekkilKonumuHeaderButtons">
+            <a asp-controller="CezaMahkemesiMuvekkilKonumu" asp-action="CezaMahkemesiMuvekkilKonumuEkle" title="Ekle"><i class="fas fa-plus i"></i></a>
+        </div>
+    </div>
+    <div class="icraHukukuMuvekkilKonumu muvekkilListeleContent">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.cezaHukukuMuvekkilKonumuTuru)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cezaHukukuMuvekkilKonumuTuru)
+                        </td>
+                        <td style="width:70px;">
+                            <a asp-controller="CezaMahkemesiMuvekkilKonumu" asp-action="CezaMahkemesiMuvekkilKonumuDuzenle" asp-route-id="@item.cezaHukukuMuvekkilKonumuId" title="Duzenle"><i class="far fa-edit i"></i></a>
+                            <a asp-controller="CezaMahkemesiMuvekkilKonumu" asp-action="CezaMahkemesiMuvekkilKonumuSil" asp-route-id="@item.cezaHukukuMuvekkilKonumuId" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

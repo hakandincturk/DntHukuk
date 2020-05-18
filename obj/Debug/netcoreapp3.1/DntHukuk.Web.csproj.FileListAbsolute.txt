@@ -247,3 +247,8 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\HukukMahkemesiMuvekkilKonumu\HukukMahkemesiMuvekkilKonumuDuzenle.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\HukukMahkemesiMuvekkilKonumu\HukukMahkemesiMuvekkilKonumuEkle.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\HukukMahkemesiMuvekkilKonumu\HukukMahkemesiMuvekkilKonumuSil.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\CezaMahkemesiMuvekkilKonumu\CezaMahkemesiMuvekkilKonumuDuzenle.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\CezaMahkemesiMuvekkilKonumu\CezaMahkemesiMuvekkilKonumuEkle.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\CezaMahkemesiMuvekkilKonumu\CezaMahkemesiMuvekkilKonumuSil.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\CezaMahkemesiMuvekkilKonumu\Index.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CezaMahkemesiMuvekkilKonumuBox\Default.cshtml.g.cs

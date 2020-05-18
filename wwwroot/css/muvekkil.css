@@ -2,6 +2,14 @@
         padding:0px 10px;
     }
 
+    .yoneticiAyarlariListeleBox:first-child{
+        margin-top:0px;
+    }
+
+    .yoneticiAyarlariListeleBox {
+        margin-top: 50px;
+}
+
     .muvekkilWrapper .muvekkilEkleHeader {
         height: 50px;
         padding: 0px 16px;
@@ -173,6 +181,8 @@
     }
 
     .muvekkilWrapper .icraHukukuMuvekkilKonumu {
+        height:250px;
+        overflow:auto;
         text-align: left;
     }
 
