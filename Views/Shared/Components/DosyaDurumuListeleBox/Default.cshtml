@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DosyaDurumu>
+
+
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+<div class="muvekkilWrapper yoneticiAyarlariListeleBox">
+    <div class="muvekkilEkleHeader muvekkilListeleHeader icraHukukuMuvekkilKonumuHeader">
+        <label class="muvekkilEkleHeaderTitle">Dosya Durumu Listesi</label>
+        <div class="icraHukukuMuvekkilKonumuHeaderButtons">
+            <a asp-controller="DosyaDurumu" asp-action="DosyaDurumuEkle" title="Ekle"><i class="fas fa-plus i"></i></a>
+        </div>
+    </div>
+    <div class="icraHukukuMuvekkilKonumu muvekkilListeleContent">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.dosyaDurumuTuru)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.dosyaDurumuTuru)
+                        </td>
+                        <td style="width:70px;">
+                            <a asp-controller="DosyaDurumu" asp-action="DosyaDurumuDuzenle" asp-route-id="@item.dosyaDurumuId" title="Duzenle"><i class="far fa-edit i"></i></a>
+                            <a asp-controller="DosyaDurumu" asp-action="DosyaDurumuSil" asp-route-id="@item.dosyaDurumuId" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dosyaDurumuId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dosyaDurumuTuru)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dosyaDurumuId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dosyaDurumuTuru)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+    </tbody>
