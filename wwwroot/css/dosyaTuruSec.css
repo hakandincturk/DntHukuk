@@ -1,0 +1,63 @@
+﻿    .dosyaTurleriWrapper {
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap:wrap;
+    }
+
+    .dosyaTurleriWrapper a {
+        box-sizing:border-box;
+        background: rgba(255, 255, 255, 0.32);
+        color: #333;
+        font-size: 16px;
+        font-weight: 600;
+        width: 45%;
+        padding: calc(29vh - 110px) 0px;
+        margin:15px;
+        text-align: center;
+        box-shadow: black 1px 1px 20px -9px;
+        border-radius:4px;
+        text-decoration: none;
+        transition:175ms all ease-in-out;
+    }
+
+    .dosyaTurleriWrapper .icra {
+        border-bottom: 5px solid #52cc00;
+    }
+
+    .dosyaTurleriWrapper .icra:hover {
+        font-size:18px;
+        transform: scale(1.07);
+        border-bottom: 8px solid #52cc00;
+    }
+
+    .dosyaTurleriWrapper .hukuk {
+        border-bottom: 5px solid #000dff;
+    }
+
+        .dosyaTurleriWrapper .hukuk:hover {
+            font-size: 18px;
+            transform: scale(1.07);
+            border-bottom: 8px solid #000dff;
+        }
+
+    .dosyaTurleriWrapper .ceza {
+        border-bottom: 5px solid #e02c2c
+    }
+
+        .dosyaTurleriWrapper .ceza:hover {
+            font-size: 18px;
+            transform: scale(1.07);
+            border-bottom: 8px solid #e02c2c
+        }
+
+    .dosyaTurleriWrapper .idare {
+        border-bottom: 5px solid #aa6924
+    }
+
+        .dosyaTurleriWrapper .idare:hover {
+            font-size: 18px;
+            transform: scale(1.07);
+            border-bottom: 8px solid #aa6924
+        }

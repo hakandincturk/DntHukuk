@@ -20,7 +20,7 @@ namespace DntHukuk.Web.Controllers
         }
 
         // GET: IdareMahkemesiMahkemeTuru
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return RedirectToAction("YoneticiAyarlariListele", "Ayarlar");
         }

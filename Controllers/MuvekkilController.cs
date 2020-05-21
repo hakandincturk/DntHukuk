@@ -9,9 +9,11 @@ using DntHukuk.Web.Data;
 using DntHukuk.Web.Models;
 using DntHukuk.Web.Areas.Identity.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DntHukuk.Web.Controllers
 {
+    [Authorize]
     public class MuvekkilController : Controller
     {
         private readonly AuthDbContext _context;
