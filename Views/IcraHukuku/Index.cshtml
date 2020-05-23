@@ -1,0 +1,139 @@
+﻿@model IEnumerable<DntHukuk.Web.Models.Dosya>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SorumluAvukatId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MuvekkilId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MuvekkilKonumuId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaDurumuId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaBaslamaTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaBitisTarihi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaSehir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaIlce)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaMahkemeAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaSiraNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaKonu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaSonDurum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaMuvekkilEvraklariPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaKarsiTarafEvraklariPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaMerciEvraklari)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaKarsiTarafId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SorumluAvukatId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MuvekkilId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MuvekkilKonumuId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaDurumuId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaBaslamaTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaBitisTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaSehir)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaIlce)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaMahkemeAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaSiraNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaKonu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaSonDurum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaMuvekkilEvraklariPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaKarsiTarafEvraklariPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaMerciEvraklari)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaKarsiTarafId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DosyaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DosyaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DosyaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

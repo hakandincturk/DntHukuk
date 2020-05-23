@@ -1,0 +1,171 @@
+﻿@model Dosya
+
+@{
+    ViewData["Title"] = "Icra Hukuku Dosya Ekle";
+}
+
+@section Styles{
+    <link href="~/css/dosya.css" rel="stylesheet" />
+}
+
+
+<div class="dosyaWrapper">
+    <div class="dosyaHeader">
+        <img src="~/pictures/user/user.svg" width="45" height="45" />
+        <label class="dosyaHeaderTitle">Icra Hukuku Dosya Ekle</label>
+    </div>
+    <div class="dosyaContent">
+        <form asp-controller="IcraHukuku" asp-action="IcraHukukuDosyaEkle" method="post">
+            <div class="dosyaContentRow1">
+                <div class="form-group">
+                    <label asp-for="MuvekkilId" class="control-label"></label>
+                    @await Component.InvokeAsync("MuvekkillerDropDown")
+                    <span asp-validation-for="MuvekkilId" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-4">
+                    <label asp-for="SorumluAvukatId" class="control-label"></label>
+                    @await Component.InvokeAsync("SorumluAvukatDropDown")
+                    <span asp-validation-for="SorumluAvukatId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow2">
+                <div class="form-group">
+                    <label asp-for="MuvekkilKonumuId" class="control-label"></label>
+                    @await Component.InvokeAsync("IcraMahkemesiMuvekkilKonumuDropDown")
+                    <span asp-validation-for="MuvekkilKonumuId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow2">
+                <div class="form-group">
+                    <label asp-for="MuvekkilKonumuId" class="control-label"></label>
+                    @await Component.InvokeAsync("DosyaDurumuDropDown")
+                    <span asp-validation-for="MuvekkilKonumuId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 datepicker">
+                <div class="form-group">
+                    <label asp-for="DosyaBaslamaTarihi" class="control-label"></label>
+                    <input asp-for="DosyaBaslamaTarihi" class="form-control" />
+                    <span asp-validation-for="DosyaBaslamaTarihi" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-4 datepicker">
+                    <label asp-for="DosyaBitisTarihi" class="control-label"></label>
+                    <input asp-for="DosyaBitisTarihi" class="form-control" />
+                    <span asp-validation-for="DosyaBitisTarihi" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <div class="dosyaContentRow1 dosyaContentRow5">
+                    <button asp-controller="Muvekkil" asp-action="Listele" class="btn btn-danger">İptal</button>
+                    <button class="btn btn-primary">Ekle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<h1>Icra Hukuku Dosya Ekle</h1>
+
+<h4>Dosya</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="IcraHukukuDosyaEkle">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SorumluAvukatId" class="control-label"></label>
+                <input asp-for="SorumluAvukatId" class="form-control" />
+                <span asp-validation-for="SorumluAvukatId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @await Component.InvokeAsync("MuvekkillerDropDown");
+                <label asp-for="MuvekkilId" class="control-label"></label>
+                <input asp-for="MuvekkilId" class="form-control" />
+                <span asp-validation-for="MuvekkilId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MuvekkilKonumuId" class="control-label"></label>
+                <input asp-for="MuvekkilKonumuId" class="form-control" />
+                <span asp-validation-for="MuvekkilKonumuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaDurumuId" class="control-label"></label>
+                <input asp-for="DosyaDurumuId" class="form-control" />
+                <span asp-validation-for="DosyaDurumuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaBaslamaTarihi" class="control-label"></label>
+                <input asp-for="DosyaBaslamaTarihi" class="form-control" />
+                <span asp-validation-for="DosyaBaslamaTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaBitisTarihi" class="control-label"></label>
+                <input asp-for="DosyaBitisTarihi" class="form-control" />
+                <span asp-validation-for="DosyaBitisTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaAdi" class="control-label"></label>
+                <input asp-for="DosyaAdi" class="form-control" />
+                <span asp-validation-for="DosyaAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaSehir" class="control-label"></label>
+                <input asp-for="DosyaSehir" class="form-control" />
+                <span asp-validation-for="DosyaSehir" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaIlce" class="control-label"></label>
+                <input asp-for="DosyaIlce" class="form-control" />
+                <span asp-validation-for="DosyaIlce" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaMahkemeAdi" class="control-label"></label>
+                <input asp-for="DosyaMahkemeAdi" class="form-control" />
+                <span asp-validation-for="DosyaMahkemeAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaSiraNo" class="control-label"></label>
+                <input asp-for="DosyaSiraNo" class="form-control" />
+                <span asp-validation-for="DosyaSiraNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaKonu" class="control-label"></label>
+                <input asp-for="DosyaKonu" class="form-control" />
+                <span asp-validation-for="DosyaKonu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaSonDurum" class="control-label"></label>
+                <input asp-for="DosyaSonDurum" class="form-control" />
+                <span asp-validation-for="DosyaSonDurum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaMuvekkilEvraklariPath" class="control-label"></label>
+                <input asp-for="DosyaMuvekkilEvraklariPath" class="form-control" />
+                <span asp-validation-for="DosyaMuvekkilEvraklariPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaKarsiTarafEvraklariPath" class="control-label"></label>
+                <input asp-for="DosyaKarsiTarafEvraklariPath" class="form-control" />
+                <span asp-validation-for="DosyaKarsiTarafEvraklariPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaMerciEvraklari" class="control-label"></label>
+                <input asp-for="DosyaMerciEvraklari" class="form-control" />
+                <span asp-validation-for="DosyaMerciEvraklari" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DosyaKarsiTarafId" class="control-label"></label>
+                <input asp-for="DosyaKarsiTarafId" class="form-control" />
+                <span asp-validation-for="DosyaKarsiTarafId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

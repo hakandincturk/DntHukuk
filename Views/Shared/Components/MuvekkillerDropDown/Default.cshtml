@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Muvekkil>
+
+@{
+    var seciliMuvekkilId = ViewBag.muvekkilId;
+}
+
+@if (seciliMuvekkilId != null)
+{
+    <select class="muvekkillerDropDown" name="muvekkillerDropDown" readonly>
+        @foreach (var item in Model)
+        {
+            if (item.muvekkilId == seciliMuvekkilId)
+            {
+                <option value="@item.muvekkilId" selected>@item.muvekkilAdi @item.muvekkilSoyAdi</option>
+            }
+            else
+            {
+    <option value="@item.muvekkilId">@item.muvekkilAdi @item.muvekkilSoyAdi</option>
+            }
+        }
+    </select>
+}
+else
+{
+    <select class="muvekkilId" name="muvekkilDropDown">
+        @foreach (var item in Model)
+        {
+        <option value="@item.muvekkilId">@item.muvekkilAdi @item.muvekkilSoyAdi</option>
+        }
+    </select>
+}

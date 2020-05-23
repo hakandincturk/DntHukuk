@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DosyaDurumu>
+
+@{
+    var secilidosyaDurumuId = ViewBag.dosyaDurumuId;
+}
+
+@if (secilidosyaDurumuId != null)
+{
+    <select class="muvekkillerDropDown" name="muvekkillerDropDown" readonly>
+        @foreach (var item in Model)
+        {
+            if (item.dosyaDurumuId == secilidosyaDurumuId)
+            {
+                <option value="@item.dosyaDurumuId" selected>@item.dosyaDurumuTuru</option>
+            }
+            else
+            {
+                <option value="@item.dosyaDurumuId">@item.dosyaDurumuTuru</option>
+            }
+        }
+    </select>
+}
+else
+{
+    <select class="dosyaDurumuId" name="dosyaDurumuId">
+        @foreach (var item in Model)
+        {
+            <option value="@item.dosyaDurumuId">@item.dosyaDurumuTuru</option>
+        }
+    </select>
+}
