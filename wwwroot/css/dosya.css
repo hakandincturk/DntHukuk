@@ -49,6 +49,14 @@
         flex-direction:column;
     }
 
+    .dosyaWrapper .dosyaContent form .dosyaContentRow3 .form-group {
+        width: 58%;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow4 .width15 {
+        width: 15%;
+    }
+
     .dosyaWrapper .dosyaContent form .dosyaContentRow1 .form-group select {
         border: 1px solid rgba(0,0,0, 0.3);
         padding: 10px;

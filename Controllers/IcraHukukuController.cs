@@ -7,16 +7,21 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DntHukuk.Web.Data;
 using DntHukuk.Web.Models;
+using DntHukuk.Web.ViewModel;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace DntHukuk.Web.Controllers
 {
     public class IcraHukukuController : Controller
     {
         private readonly AuthDbContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public IcraHukukuController(AuthDbContext context)
+        public IcraHukukuController(AuthDbContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         // GET: IcraHukuku
@@ -54,15 +59,65 @@ namespace DntHukuk.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> IcraHukukuDosyaEkle([Bind("DosyaId,SorumluAvukatId,MuvekkilId,MuvekkilKonumuId,DosyaDurumuId,DosyaBaslamaTarihi,DosyaBitisTarihi,DosyaAdi,DosyaSehir,DosyaIlce,DosyaMahkemeAdi,DosyaSiraNo,DosyaKonu,DosyaSonDurum,DosyaMuvekkilEvraklariPath,DosyaKarsiTarafEvraklariPath,DosyaMerciEvraklari,DosyaKarsiTarafId")] Dosya dosya)
+        public async Task<IActionResult> IcraHukukuDosyaEkle(DosyaViewModel dosyaViewModel)
         {
+            Dosya yeniDoysa;
+
             if (ModelState.IsValid)
             {
-                _context.Add(dosya);
+                string muvekkilEvraklariUniqeFileName = null;
+                string karsiTarafEvraklariUniqeFileName = null;
+                string merciEvraklariUniqeFileName = null;
+
+                if (dosyaViewModel.DosyaMuvekkilEvraklari != null)
+                {
+                    string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, "userUploadedFile");
+                    muvekkilEvraklariUniqeFileName = Guid.NewGuid().ToString() + "_" + dosyaViewModel.DosyaMuvekkilEvraklari.FileName;
+                    string filePath = Path.Combine(uploadsFolder, muvekkilEvraklariUniqeFileName);
+                    dosyaViewModel.DosyaMuvekkilEvraklari.CopyTo(new FileStream(filePath, FileMode.Create));
+                }
+
+                if (dosyaViewModel.DosyaKarsiTarafEvraklari != null)
+                {
+                    string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, "userUploadedFile");
+                    karsiTarafEvraklariUniqeFileName = Guid.NewGuid().ToString() + "_" + dosyaViewModel.DosyaKarsiTarafEvraklari.FileName;
+                    string filePath = Path.Combine(uploadsFolder, karsiTarafEvraklariUniqeFileName);
+                    dosyaViewModel.DosyaKarsiTarafEvraklari.CopyTo(new FileStream(filePath, FileMode.Create));
+                }
+
+                if (dosyaViewModel.DosyaMerciEvraklari != null)
+                {
+                    string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, "userUploadedFile");
+                    merciEvraklariUniqeFileName = Guid.NewGuid().ToString() + "_" + dosyaViewModel.DosyaMerciEvraklari.FileName;
+                    string filePath = Path.Combine(uploadsFolder, merciEvraklariUniqeFileName);
+                    dosyaViewModel.DosyaMerciEvraklari.CopyTo(new FileStream(filePath, FileMode.Create));
+                }
+
+                yeniDoysa = new Dosya
+                {
+                    MuvekkilId = Guid.Parse(HttpContext.Request.Form["muvekkilDropDown"]), 
+                    SorumluAvukatId = Guid.Parse(HttpContext.Request.Form["sorumluAvukatDropDown"]),
+                    MuvekkilKonumuId = Convert.ToInt32(HttpContext.Request.Form["muvekkilKonumuDropDown"]),
+                    DosyaDurumuId = Convert.ToInt32(HttpContext.Request.Form["dosyaDurumuId"]),
+                    DosyaBaslamaTarihi = dosyaViewModel.DosyaBaslamaTarihi,
+                    DosyaBitisTarihi = dosyaViewModel.DosyaBitisTarihi,
+                    DosyaAdi = dosyaViewModel.DosyaAdi,
+                    DosyaSehir = dosyaViewModel.DosyaSehir,
+                    DosyaIlce = dosyaViewModel.DosyaIlce,
+                    DosyaMahkemeAdi = dosyaViewModel.DosyaMahkemeAdi,
+                    DosyaSiraNo = dosyaViewModel.DosyaSiraNo,
+                    DosyaKonu = dosyaViewModel.DosyaKonu,
+                    DosyaSonDurum = dosyaViewModel.DosyaSonDurum,
+                    DosyaMuvekkilEvraklariPath = muvekkilEvraklariUniqeFileName ?? null,
+                    DosyaKarsiTarafEvraklariPath = karsiTarafEvraklariUniqeFileName ?? null,
+                    DosyaMerciEvraklari = merciEvraklariUniqeFileName ?? null
+                };
+                yeniDoysa.DosyaTuru = 1;
+                _context.Add(yeniDoysa);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(dosya);
+            return View();
         }
 
         // GET: IcraHukuku/Edit/5

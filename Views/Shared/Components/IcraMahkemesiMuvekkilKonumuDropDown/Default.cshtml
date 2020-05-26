@@ -6,7 +6,7 @@
 
 @if (seciliMuvekkilKonumuId != null)
 {
-    <select class="muvekkillerDropDown" name="muvekkillerDropDown" readonly>
+    <select class="muvekkilKonumuDropDown" name="muvekkilKonumuDropDown" readonly>
         @foreach (var item in Model)
         {
             if (item.Id == seciliMuvekkilKonumuId)
@@ -22,7 +22,7 @@
 }
 else
 {
-    <select class="icraMahkemesiMuvekkilKonumuId" name="icraMahkemesiDropDown">
+    <select class="muvekkilKonumuDropDown" name="muvekkilKonumuDropDown">
         @foreach (var item in Model)
         {
         <option value="@item.Id">@item.IcraHukukMuvekkilKonumu</option>
