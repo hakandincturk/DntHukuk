@@ -1,4 +1,4 @@
-﻿@model DntHukuk.Web.Models.Dosya
+﻿@model Dosyalar
 
 @{
     Layout = null;
@@ -101,9 +101,9 @@
                 <span asp-validation-for="DosyaMerciEvraklari" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DosyaKarsiTarafId" class="control-label"></label>
-                <input asp-for="DosyaKarsiTarafId" class="form-control" />
-                <span asp-validation-for="DosyaKarsiTarafId" class="text-danger"></span>
+                <label asp-for="DosyaKarsiTarafBilgi" class="control-label"></label>
+                <input asp-for="DosyaKarsiTarafBilgi" class="form-control" />
+                <span asp-validation-for="DosyaKarsiTarafBilgi" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

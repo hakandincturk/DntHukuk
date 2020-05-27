@@ -17,9 +17,10 @@ namespace DntHukuk.Web.ViewComponents
             _context = context;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int? muvekkilId)
+        public async Task<IViewComponentResult> InvokeAsync(Guid? muvekkilId, bool? sadeceOkunur)
         {
             ViewBag.muvekkilId = muvekkilId ?? null;
+            ViewBag.sadeceOkunur = sadeceOkunur ?? false;
             return View(await _context.Muvekkil.ToListAsync());
         }
     }

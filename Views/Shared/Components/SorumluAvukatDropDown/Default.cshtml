@@ -9,7 +9,7 @@
     <select class="sorumluAvukatDropDown" name="sorumluAvukatDropDown" readonly>
         @foreach (var item in Model)
         {
-            if (item.Id == sorumluAvukatId)
+            if (item.Id == sorumluAvukatId.ToString())
             {
                 <option value="@item.Id" selected>@item.userFirstName @item.userLastName</option>
             }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DntHukuk.Web.Areas.Identity.Data;
 using DntHukuk.Web.Models;
+using DntHukuk.Web.ViewModel;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,7 @@ namespace DntHukuk.Web.Data
         public DbSet<IdareMahkemesiMuvekkilKonumu> IdareMahkemesiMuvekkilKonumu { get; set; }
         public DbSet<IdareMahkemesiMahkemeTuru> IdareMahkemesiMahkemeTuru { get; set; }
         public DbSet<DosyaDurumu> DosyaDurumu { get; set; }
-        public DbSet<Dosya> Dosya { get; set; }
+        public DbSet<Dosyalar> Dosyalar { get; set; }
         
 
         protected override void OnModelCreating(ModelBuilder builder)

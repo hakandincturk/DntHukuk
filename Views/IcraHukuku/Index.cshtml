@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DntHukuk.Web.Models.Dosya>
+﻿@model IEnumerable<Dosyalar>
 
 @{
     Layout = null;
@@ -67,7 +67,7 @@
                 @Html.DisplayNameFor(model => model.DosyaMerciEvraklari)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DosyaKarsiTarafId)
+                @Html.DisplayNameFor(model => model.DosyaKarsiTarafBilgi)
             </th>
             <th></th>
         </tr>
@@ -124,10 +124,10 @@
                 @Html.DisplayFor(modelItem => item.DosyaMerciEvraklari)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DosyaKarsiTarafId)
+                @Html.DisplayFor(modelItem => item.DosyaKarsiTarafBilgi)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.DosyaId">Edit</a> |
+                <a asp-controller="IcraHukuku" asp-action="IcraHukukuDosyaDuzenle" asp-route-id="@item.DosyaId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.DosyaId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.DosyaId">Delete</a>
             </td>

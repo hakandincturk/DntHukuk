@@ -27,7 +27,7 @@ namespace DntHukuk.Web.Controllers
         // GET: IcraHukuku
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Dosya.ToListAsync());
+            return View(await _context.Dosyalar.ToListAsync());
         }
 
         // GET: IcraHukuku/Details/5
@@ -38,7 +38,7 @@ namespace DntHukuk.Web.Controllers
                 return NotFound();
             }
 
-            var dosya = await _context.Dosya
+            var dosya = await _context.Dosyalar
                 .FirstOrDefaultAsync(m => m.DosyaId == id);
             if (dosya == null)
             {
@@ -59,9 +59,9 @@ namespace DntHukuk.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> IcraHukukuDosyaEkle(DosyaViewModel dosyaViewModel)
+        public async Task<IActionResult> IcraHukukuDosyaEkle(DosyalarViewModel dosyaViewModel)
         {
-            Dosya yeniDoysa;
+            Dosyalar yeniDoysa;
 
             if (ModelState.IsValid)
             {
@@ -93,12 +93,12 @@ namespace DntHukuk.Web.Controllers
                     dosyaViewModel.DosyaMerciEvraklari.CopyTo(new FileStream(filePath, FileMode.Create));
                 }
 
-                yeniDoysa = new Dosya
+                yeniDoysa = new Dosyalar
                 {
-                    MuvekkilId = Guid.Parse(HttpContext.Request.Form["muvekkilDropDown"]), 
+                    MuvekkilId = Guid.Parse(HttpContext.Request.Form["muvekkillerDropDown"]), 
                     SorumluAvukatId = Guid.Parse(HttpContext.Request.Form["sorumluAvukatDropDown"]),
-                    MuvekkilKonumuId = Convert.ToInt32(HttpContext.Request.Form["muvekkilKonumuDropDown"]),
-                    DosyaDurumuId = Convert.ToInt32(HttpContext.Request.Form["dosyaDurumuId"]),
+                    MuvekkilKonumuId = Convert.ToInt32(HttpContext.Request.Form["icraMahkemesiMuvekkilKonumuIdDropDown"]),
+                    DosyaDurumuId = Convert.ToInt32(HttpContext.Request.Form["dosyaDurumuIdDropDown"]),
                     DosyaBaslamaTarihi = dosyaViewModel.DosyaBaslamaTarihi,
                     DosyaBitisTarihi = dosyaViewModel.DosyaBitisTarihi,
                     DosyaAdi = dosyaViewModel.DosyaAdi,
@@ -121,14 +121,14 @@ namespace DntHukuk.Web.Controllers
         }
 
         // GET: IcraHukuku/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> IcraHukukuDosyaDuzenle(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var dosya = await _context.Dosya.FindAsync(id);
+            var dosya = await _context.Dosyalar.FindAsync(id);
             if (dosya == null)
             {
                 return NotFound();
@@ -141,7 +141,7 @@ namespace DntHukuk.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DosyaId,SorumluAvukatId,MuvekkilId,MuvekkilKonumuId,DosyaDurumuId,DosyaBaslamaTarihi,DosyaBitisTarihi,DosyaAdi,DosyaSehir,DosyaIlce,DosyaMahkemeAdi,DosyaSiraNo,DosyaKonu,DosyaSonDurum,DosyaMuvekkilEvraklariPath,DosyaKarsiTarafEvraklariPath,DosyaMerciEvraklari,DosyaKarsiTarafId")] Dosya dosya)
+        public async Task<IActionResult> IcraHukukuDosyaDuzenle(int id, [Bind("DosyaId,SorumluAvukatId,MuvekkilId,MuvekkilKonumuId,DosyaDurumuId,DosyaBaslamaTarihi,DosyaBitisTarihi,DosyaAdi,DosyaSehir,DosyaIlce,DosyaMahkemeAdi,DosyaSiraNo,DosyaKonu,DosyaSonDurum,DosyaMuvekkilEvraklariPath,DosyaKarsiTarafEvraklariPath,DosyaMerciEvraklari,DosyaKarsiTarafId")] Dosyalar dosya)
         {
             if (id != dosya.DosyaId)
             {
@@ -152,6 +152,11 @@ namespace DntHukuk.Web.Controllers
             {
                 try
                 {
+                    dosya.MuvekkilId = Guid.Parse(HttpContext.Request.Form["muvekkillerDropDown"]);
+                    dosya.SorumluAvukatId = Guid.Parse(HttpContext.Request.Form["sorumluAvukatDropDown"]);
+                    dosya.MuvekkilKonumuId = Convert.ToInt32(HttpContext.Request.Form["icraMahkemesiMuvekkilKonumuIdDropDown"]);
+                    dosya.DosyaDurumuId = Convert.ToInt32(HttpContext.Request.Form["dosyaDurumuIdDropDown"]);
+
                     _context.Update(dosya);
                     await _context.SaveChangesAsync();
                 }
@@ -179,7 +184,7 @@ namespace DntHukuk.Web.Controllers
                 return NotFound();
             }
 
-            var dosya = await _context.Dosya
+            var dosya = await _context.Dosyalar
                 .FirstOrDefaultAsync(m => m.DosyaId == id);
             if (dosya == null)
             {
@@ -194,15 +199,15 @@ namespace DntHukuk.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dosya = await _context.Dosya.FindAsync(id);
-            _context.Dosya.Remove(dosya);
+            var dosya = await _context.Dosyalar.FindAsync(id);
+            _context.Dosyalar.Remove(dosya);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool DosyaExists(int id)
         {
-            return _context.Dosya.Any(e => e.DosyaId == id);
+            return _context.Dosyalar.Any(e => e.DosyaId == id);
         }
     }
 }

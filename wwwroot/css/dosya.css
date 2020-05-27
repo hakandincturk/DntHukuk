@@ -111,12 +111,11 @@
         margin-left: 2px;
         font-size: 16px;
         color: #333;
-        transition: 175ms font-size ease-in-out;
+        transition: 175ms all ease-in-out;
     }
 
     .dosyaWrapper .dosyaContent a:hover {
         color: rgb(239, 108, 60);
-        font-size: 18px;
     }
 
     .dosyaWrapper .dosyaContent a:first-child:hover {

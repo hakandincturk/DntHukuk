@@ -1,4 +1,4 @@
-﻿@model DosyaViewModel
+﻿@model DosyalarViewModel
 
 @{
     ViewData["Title"] = "Icra Hukuku Dosya Ekle";
@@ -46,7 +46,7 @@
                     <input asp-for="DosyaBaslamaTarihi" class="form-control" />
                     <span asp-validation-for="DosyaBaslamaTarihi" class="text-danger"></span>
                 </div>
-                <div class="form-group ml-4 datepicker">
+                <div class="form-group ml-4 datepicker dosyaBitisTarihiRow">
                     <label asp-for="DosyaBitisTarihi" class="control-label"></label>
                     <input asp-for="DosyaBitisTarihi" class="form-control" />
                     <span asp-validation-for="DosyaBitisTarihi" class="text-danger"></span>
@@ -129,7 +129,11 @@
             </div>
             <hr />
             <div class="dosyaContentRow1 dosyaContentRow3">
-
+                <div class="form-group">
+                    <label asp-for="DosyaKarsiTarafBilgi" class="control-label">Karşı Taraf Bilgi</label>
+                    <input asp-for="DosyaKarsiTarafBilgi" class="form-control" />
+                    <span asp-validation-for="DosyaKarsiTarafBilgi" class="text-danger"></span>
+                </div>
             </div>
             <div>
                 <div class="dosyaContentRow1 dosyaContentRow5">
@@ -149,6 +153,24 @@
                 var fileName = $(this).val().split("\\").pop();
                 $(this).next(".custom-file-label").html(fileName);
             });
+             $(".dosyaBitisTarihiRow").addClass("rowHidden");
+
+
+            $(document).ready(function () {
+                $("select.dosyaDurumuIdDropDown").change(function () {
+                    var selectedType = $(this).children("option:selected").text();
+                    if (selectedType != "Devam Ediyor") {
+                        $(".dosyaBitisTarihiRow").removeClass("rowHidden");
+                        $(".dosyaBitisTarihiRow").addClass("rowShow");
+                    }
+                    else {
+                        
+                        $(".dosyaBitisTarihiRow").removeClass("rowShow");
+                        $(".dosyaBitisTarihiRow").addClass("rowHidden");
+                    }
+                });
+            });
+
         });
     </script>
 }

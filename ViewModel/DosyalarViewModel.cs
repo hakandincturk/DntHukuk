@@ -1,18 +1,15 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DntHukuk.Web.Models
+namespace DntHukuk.Web.ViewModel
 {
-    public class Dosya
+    public class DosyalarViewModel
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int DosyaId { get; set; }
-
         [Required]
         [Display(Name = "Sorumlu Avukat Adı Soyadı")]
         public Guid SorumluAvukatId { get; set; }
@@ -73,22 +70,21 @@ namespace DntHukuk.Web.Models
 
         [Column(TypeName = "nvarchar(MAX)")]
         [Display(Name = "Müvekkil Evrakları")]
-        public string DosyaMuvekkilEvraklariPath { get; set; }
+        public IFormFile DosyaMuvekkilEvraklari { get; set; }
 
         [Column(TypeName = "nvarchar(MAX)")]
         [Display(Name = "Karşı Taraf Evrakları")]
-        public string DosyaKarsiTarafEvraklariPath { get; set; }
+        public IFormFile DosyaKarsiTarafEvraklari { get; set; }
 
         [Column(TypeName = "nvarchar(MAX)")]
         [Display(Name = "Merci Evrakları")]
-        public string DosyaMerciEvraklari { get; set; }
+        public IFormFile DosyaMerciEvraklari { get; set; }
 
-        [Column(TypeName = "int")]
+        [Column(TypeName = "string")]
         [Display(Name = "Karşı Taraf")]
-        public int DosyaKarsiTarafId { get; set; }
+        public string DosyaKarsiTarafBilgi { get; set; }
 
         [Column(TypeName = "int")]
         public int DosyaTuru { get; set; }
-
     }
 }

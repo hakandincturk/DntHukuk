@@ -18,7 +18,7 @@ namespace DntHukuk.Web.ViewComponents
             _userManager = userManager;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int? avukatId)
+        public async Task<IViewComponentResult> InvokeAsync(Guid? avukatId)
         {
             ViewBag.sorumluAvukatId = avukatId ?? null;
             return View(await _userManager.Users.ToListAsync());
