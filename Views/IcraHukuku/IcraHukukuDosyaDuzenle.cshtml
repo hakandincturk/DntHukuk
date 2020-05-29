@@ -106,7 +106,8 @@
                 <div class="form-group">
                     <label asp-for="DosyaMuvekkilEvraklariPath" class="control-label"></label>
                     <div class="custom-file">
-                        <label asp-for="DosyaMuvekkilEvraklariPath" class="custom-file-label"style="background: #ddd;">
+                        <input asp-for="DosyaMuvekkilEvraklariPath" hidden />
+                        <label asp-for="DosyaMuvekkilEvraklariPath" class="custom-file-label" style="background: #ddd;">
                             <a href="~/userUploadedFile/@Model.DosyaKarsiTarafEvraklariPath">
                                 @Model.DosyaKarsiTarafEvraklariPath
                             </a>
@@ -118,6 +119,7 @@
                 <div class="form-group">
                     <label asp-for="DosyaKarsiTarafEvraklariPath" class="control-label"></label>
                     <div class="custom-file">
+                        <input asp-for="DosyaKarsiTarafEvraklariPath" hidden/>
                         <label asp-for="DosyaKarsiTarafEvraklariPath" class="custom-file-label"style="background: #ddd;">
                             <a href="~/userUploadedFile/@Model.DosyaKarsiTarafEvraklariPath">
                                 @Model.DosyaKarsiTarafEvraklariPath
@@ -130,6 +132,7 @@
                 <div class="form-group">
                     <label asp-for="DosyaMerciEvraklari" class="control-label"></label>
                     <div class="custom-file">
+                        <input asp-for="DosyaMerciEvraklari" hidden />
                         <label asp-for="DosyaMerciEvraklari" class="custom-file-label" style="background: #ddd;">
                             <a href="~/userUploadedFile/@Model.DosyaMerciEvraklari">
                                 @Model.DosyaMerciEvraklari

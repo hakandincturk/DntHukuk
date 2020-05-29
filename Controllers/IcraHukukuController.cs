@@ -110,9 +110,11 @@ namespace DntHukuk.Web.Controllers
                     DosyaSonDurum = dosyaViewModel.DosyaSonDurum,
                     DosyaMuvekkilEvraklariPath = muvekkilEvraklariUniqeFileName ?? null,
                     DosyaKarsiTarafEvraklariPath = karsiTarafEvraklariUniqeFileName ?? null,
-                    DosyaMerciEvraklari = merciEvraklariUniqeFileName ?? null
+                    DosyaMerciEvraklari = merciEvraklariUniqeFileName ?? null,
+                    DosyaKarsiTarafBilgi = dosyaViewModel.DosyaKarsiTarafBilgi,
+                    DosyaTuru = 1,
+                    DosyaKarsiTarafId = 0
                 };
-                yeniDoysa.DosyaTuru = 1;
                 _context.Add(yeniDoysa);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -141,7 +143,7 @@ namespace DntHukuk.Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> IcraHukukuDosyaDuzenle(int id, [Bind("DosyaId,SorumluAvukatId,MuvekkilId,MuvekkilKonumuId,DosyaDurumuId,DosyaBaslamaTarihi,DosyaBitisTarihi,DosyaAdi,DosyaSehir,DosyaIlce,DosyaMahkemeAdi,DosyaSiraNo,DosyaKonu,DosyaSonDurum,DosyaMuvekkilEvraklariPath,DosyaKarsiTarafEvraklariPath,DosyaMerciEvraklari,DosyaKarsiTarafId")] Dosyalar dosya)
+        public async Task<IActionResult> IcraHukukuDosyaDuzenle(int id, [Bind("DosyaId,SorumluAvukatId,MuvekkilId,MuvekkilKonumuId,DosyaDurumuId,DosyaBaslamaTarihi,DosyaBitisTarihi,DosyaAdi,DosyaSehir,DosyaIlce,DosyaMahkemeAdi,DosyaSiraNo,DosyaKonu,DosyaSonDurum,DosyaMuvekkilEvraklariPath,DosyaKarsiTarafEvraklariPath,DosyaMerciEvraklari,DosyaKarsiTarafBilgi")] Dosyalar dosya)
         {
             if (id != dosya.DosyaId)
             {
