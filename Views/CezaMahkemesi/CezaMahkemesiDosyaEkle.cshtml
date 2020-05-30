@@ -23,7 +23,7 @@
         <label class="dosyaHeaderTitle">Ceza Mahkemesi Dosya Ekle</label>
     </div>
     <div class="dosyaContent">
-        <form asp-controller="IcraHukuku" asp-action="IcraHukukuDosyaEkle" method="post" enctype="multipart/form-data">
+        <form asp-controller="CezaMahkemesi" asp-action="CezaMahkemesiDosyaEkle" method="post" enctype="multipart/form-data">
             <div class="dosyaContentRow1">
                 <div class="form-group">
                     <label asp-for="MuvekkilId" class="control-label"></label>
@@ -148,7 +148,7 @@
             <div>
                 <div class="dosyaContentRow1 dosyaContentRow5">
                     <a asp-controller="DosyaTuruSec" asp-action="Index" class="btn btn-danger">İptal</a>
-                    <button type="submit" class="btn btn-primary">Ekle</button>
+                    <button class="btn btn-primary">Ekle</button>
                 </div>
             </div>
         </form>
