@@ -1,0 +1,186 @@
+﻿@model DosyalarViewModel
+
+@{
+    ViewData["Title"] = "Ceza Mahkemesi Dosya Ekle";
+}
+
+@section Styles{
+    <link href="~/css/dosya.css" rel="stylesheet" />
+    <style>
+        .headerBackButton {
+            transition: 175ms all ease-in-out;
+        }
+
+            .headerBackButton:hover {
+                font-size: 16px;
+            }
+    </style>
+}
+<div class="dosyaWrapper">
+    <div class="dosyaHeader">
+        <a asp-controller="DosyaTuruSec" asp-action="Index" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
+        <img src="~/pictures/user/user.svg" width="45" height="45" />
+        <label class="dosyaHeaderTitle">Ceza Mahkemesi Dosya Ekle</label>
+    </div>
+    <div class="dosyaContent">
+        <form asp-controller="IcraHukuku" asp-action="IcraHukukuDosyaEkle" method="post" enctype="multipart/form-data">
+            <div class="dosyaContentRow1">
+                <div class="form-group">
+                    <label asp-for="MuvekkilId" class="control-label"></label>
+                    @await Component.InvokeAsync("MuvekkillerDropDown")
+                    <span asp-validation-for="MuvekkilId" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-4">
+                    <label asp-for="SorumluAvukatId" class="control-label"></label>
+                    @await Component.InvokeAsync("SorumluAvukatDropDown")
+                    <span asp-validation-for="SorumluAvukatId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow2">
+                <div class="form-group">
+                    <label asp-for="MuvekkilKonumuId" class="control-label"></label>
+                    @await Component.InvokeAsync("CezaMahkemesiMuvekkilKonumuDropDown")
+                    <span asp-validation-for="MuvekkilKonumuId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow2">
+                <div class="form-group">
+                    <label asp-for="DosyaDurumuId" class="control-label"></label>
+                    @await Component.InvokeAsync("DosyaDurumuDropDown")
+                    <span asp-validation-for="DosyaDurumuId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 datepicker">
+                <div class="form-group">
+                    <label asp-for="DosyaBaslamaTarihi" class="control-label"></label>
+                    <input asp-for="DosyaBaslamaTarihi" class="form-control" />
+                    <span asp-validation-for="DosyaBaslamaTarihi" class="text-danger"></span>
+                </div>
+                <div class="form-group ml-4 datepicker dosyaBitisTarihiRow">
+                    <label asp-for="DosyaBitisTarihi" class="control-label"></label>
+                    <input asp-for="DosyaBitisTarihi" class="form-control" />
+                    <span asp-validation-for="DosyaBitisTarihi" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow3">
+                <div class="form-group">
+                    <label asp-for="DosyaKonu" class="control-label"></label>
+                    <input asp-for="DosyaKonu" class="form-control" />
+                    <span asp-validation-for="DosyaKonu" class="text-danger"></span>
+                </div>
+            </div>
+            <hr />
+            <div class="dosyaContentRow1 dosyaContentRow3">
+                <div class="form-group">
+                    <label asp-for="DosyaAdi" class="control-label"></label>
+                    <input asp-for="DosyaAdi" class="form-control" />
+                    <span asp-validation-for="DosyaAdi" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="dosyaContentRow1 dosyaContentRow2">
+                <div class="form-group">
+                    <label asp-for="DosyaSehir" class="control-label"></label>
+                    <input asp-for="DosyaSehir" class="form-control" />
+                    <span asp-validation-for="DosyaSehir" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DosyaIlce" class="control-label"></label>
+                    <input asp-for="DosyaIlce" class="form-control" />
+                    <span asp-validation-for="DosyaIlce" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow3 dosyaContentRow4">
+                <div class="form-group">
+                    <label asp-for="DosyaMahkemeAdi" class="control-label"></label>
+                    <input asp-for="DosyaMahkemeAdi" class="form-control" />
+                    <span asp-validation-for="DosyaMahkemeAdi" class="text-danger"></span>
+                </div>
+                <div class="form-group width15">
+                    <label asp-for="DosyaSiraNo" class="control-label"></label>
+                    <input asp-for="DosyaSiraNo" class="form-control" />
+                    <span asp-validation-for="DosyaSiraNo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow3">
+                <div class="form-group">
+                    <label asp-for="DosyaSonDurum" class="control-label"></label>
+                    <input asp-for="DosyaSonDurum" class="form-control" />
+                    <span asp-validation-for="DosyaSonDurum" class="text-danger"></span>
+                </div>
+            </div>
+            <hr />
+            <div class="dosyaContentRow1 dosyaContentRow3">
+                <div class="form-group">
+                    <label asp-for="DosyaMuvekkilEvraklari" class="control-label"></label>
+                    <div class="custom-file">
+                        <input asp-for="DosyaMuvekkilEvraklari" class="form-control custom-file-input" />
+                        <label class="custom-file-label">Dosya Seç</label>
+                    </div>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow3">
+                <div class="form-group">
+                    <label asp-for="DosyaKarsiTarafEvraklari" class="control-label"></label>
+                    <div class="custom-file">
+                        <input asp-for="DosyaKarsiTarafEvraklari" class="form-control custom-file-input" />
+                        <label class="custom-file-label">Dosya Seç</label>
+                    </div>
+                </div>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow3">
+                <div class="form-group">
+                    <label asp-for="DosyaMerciEvraklari" class="control-label"></label>
+                    <div class="custom-file">
+                        <input asp-for="DosyaMerciEvraklari" class="form-control custom-file-input" />
+                        <label class="custom-file-label">Dosya Seç</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="dosyaContentRow1 dosyaContentRow3">
+                <div class="form-group">
+                    <label asp-for="DosyaKarsiTarafBilgi" class="control-label">Karşı Taraf Bilgi</label>
+                    <input asp-for="DosyaKarsiTarafBilgi" class="form-control" />
+                    <span asp-validation-for="DosyaKarsiTarafBilgi" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <div class="dosyaContentRow1 dosyaContentRow5">
+                    <a asp-controller="DosyaTuruSec" asp-action="Index" class="btn btn-danger">İptal</a>
+                    <button type="submit" class="btn btn-primary">Ekle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function () {
+            $(".custom-file-input").on("change", function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).next(".custom-file-label").html(fileName);
+            });
+            $(".dosyaBitisTarihiRow").addClass("rowHidden");
+
+
+            $(document).ready(function () {
+                $("select.dosyaDurumuIdDropDown").change(function () {
+                    var selectedType = $(this).children("option:selected").text();
+                    if (selectedType != "Devam Ediyor") {
+                        $(".dosyaBitisTarihiRow").removeClass("rowHidden");
+                        $(".dosyaBitisTarihiRow").addClass("rowShow");
+                    }
+                    else {
+
+                        $(".dosyaBitisTarihiRow").removeClass("rowShow");
+                        $(".dosyaBitisTarihiRow").addClass("rowHidden");
+                    }
+                });
+            });
+
+        });
+    </script>
+}

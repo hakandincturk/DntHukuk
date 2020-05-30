@@ -29,6 +29,11 @@ namespace DntHukuk.Web
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            services.AddDbContext<cezaContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("cezaContext")));
+
+            services.AddDbContext<idareContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("idareContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -71,17 +71,24 @@
         outline: none;
     }
 
-.dosyaWrapper .dosyaContent form .dosyaContentRow1 button {
-    width: 28%;
-    margin: 10px 10px 0px 20px;
-    padding: 9px 15px;
-}
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 a {
+        width: 28%;
+        margin: 10px 10px 0px 20px;
+        padding: 9px 15px;
+        color:#fff;
+    }
 
-.dosyaWrapper .dosyaContent form .dosyaContentRow5 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 button {
+        width: 28%;
+        margin: 10px 10px 0px 20px;
+        padding: 9px 15px;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow5 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 
     .rowHidden {
         display: none !important;
@@ -93,6 +100,20 @@
 
     .dosyaWrapper .muvekkilListeleHeader {
         border-bottom: none;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader a {
+        color: #333;   
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader a label {
+        cursor: pointer;
+        font-size:18px;
+        transition:175ms font-size ease-in-out;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader a label:hover {
+        font-size:19px;
     }
 
     .dosyaWrapper .muvekkilListeleContent {

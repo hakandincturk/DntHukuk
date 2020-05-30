@@ -1,0 +1,31 @@
+﻿@model IEnumerable<CezaMahkemesiMuvekkilKonumu>
+
+@{
+    var seciliMuvekkilKonumuId = ViewBag.muvekkilKonumuId;
+}
+
+@if (seciliMuvekkilKonumuId != null)
+{
+    <select class="cezaMahkemesiMuvekkilKonumuIdDropDown" name="cezaMahkemesiMuvekkilKonumuIdDropDown" id="cezaMahkemesiMuvekkilKonumuIdDropDown" readonly>
+        @foreach (var item in Model)
+        {
+            if (item.cezaHukukuMuvekkilKonumuId == seciliMuvekkilKonumuId)
+            {
+                <option value="@item.cezaHukukuMuvekkilKonumuId" selected>@item.cezaHukukuMuvekkilKonumuTuru</option>
+            }
+            else
+            {
+                <option value="@item.cezaHukukuMuvekkilKonumuId">@item.cezaHukukuMuvekkilKonumuTuru</option>
+            }
+        }
+    </select>
+}
+else
+{
+    <select class="cezaMahkemesiMuvekkilKonumuIdDropDown" name="cezaMahkemesiMuvekkilKonumuIdDropDown" id="cezaMahkemesiMuvekkilKonumuIdDropDown">
+        @foreach (var item in Model)
+        {
+            <option value="@item.cezaHukukuMuvekkilKonumuId">@item.cezaHukukuMuvekkilKonumuTuru</option>
+        }
+    </select>
+}

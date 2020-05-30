@@ -26,7 +26,7 @@
         <div class="muvekkilListeleContentRow2">
             <dl class="row maringss">
                 <dt class="col-sm-2">
-                    Dosya Id:
+                    Dosya Id
                 </dt>
                 <dd class="col-sm-10">
                     @Html.DisplayFor(model => model.DosyaId)
@@ -40,13 +40,13 @@
                         @Html.DisplayNameFor(model => model.MuvekkilId)
                     </dt>
                     <dd class="col-sm-4">
-                        @Html.DisplayFor(model => model.MuvekkilId)
+                        @await DntHukuk.Web.Controllers.DosyalarController.MuvekkilIdToName(Model.MuvekkilId)
                     </dd>
                     <dt class="col-sm-2">
                         @Html.DisplayNameFor(model => model.SorumluAvukatId)
                     </dt>
                     <dd class="col-sm-4">
-                        @Html.DisplayFor(model => model.SorumluAvukatId)
+                        @await DntHukuk.Web.Controllers.DosyalarController.AvukatIdToName(Model.SorumluAvukatId)
                     </dd>
                 </dl>
             </div>
@@ -58,7 +58,10 @@
                         @Html.DisplayNameFor(model => model.MuvekkilKonumuId)
                     </dt>
                     <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.MuvekkilKonumuId)
+                        @if (Model.DosyaTuru == 1) {@await DntHukuk.Web.Controllers.DosyalarController.IcraHukukuMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
+                        else if (Model.DosyaTuru == 2) {@await DntHukuk.Web.Controllers.DosyalarController.HukukMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
+                        else if (Model.DosyaTuru == 3) {@await DntHukuk.Web.Controllers.DosyalarController.CezaMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
+                        else if (Model.DosyaTuru == 4) {@await DntHukuk.Web.Controllers.DosyalarController.IdareMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
                     </dd>
                 </dl>
             </div>
@@ -71,7 +74,7 @@
                         @Html.DisplayNameFor(model => model.DosyaDurumuId)
                     </dt>
                     <dd class="col-sm-10">
-                        @Html.DisplayFor(model => model.DosyaDurumuId)
+                        @await DntHukuk.Web.Controllers.DosyalarController.DosyaDurumuIdToName(Model.DosyaDurumuId)
                     </dd>
                 </dl>
             </div>
