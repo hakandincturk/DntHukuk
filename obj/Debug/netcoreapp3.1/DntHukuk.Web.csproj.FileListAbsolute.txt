@@ -277,3 +277,7 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\IcraMahkemesiMuvekkilKonumuDropDown\Default.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\DosyaDurumuDropDown\Default.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IcraHukuku\IcraHukukuDosyaDuzenle.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Dosyalar\Detay.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Dosyalar\Listele.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IcraHukuku\IcraHukukuDosyaDetay.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Dosyalar\Duzenle.cshtml.g.cs

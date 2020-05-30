@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Dosyalar>
+
+@{
+    ViewData["Title"] = "Dosya Listele";
+}
+
+@section Styles{
+    <link href="~/css/dosya.css" rel="stylesheet" />
+    <style>
+        .headerBackButton {
+            transition: 175ms all ease-in-out;
+        }
+
+            .headerBackButton:hover {
+                font-size: 16px;
+            }
+    </style>
+}
+@foreach (var dosya in Model)
+{
+    var dosyaTuruId = dosya.DosyaTuru;
+    var renk = "whitesmoke";
+    var controller = "NotFound";
+    if (dosyaTuruId == 1)
+    {
+        renk = "#52cc00";
+        controller = "IcraHukuku";
+    }
+    else if (dosyaTuruId == 2)
+    {
+        renk = "#000dff";
+        controller = "HukukMahkemesi";
+    }
+    else if (dosyaTuruId == 3)
+    {
+        renk = "#e02c2c";
+        controller = "CezaMahkemesi";
+    }
+    else if (dosyaTuruId == 4)
+    {
+        renk = "#aa6924";
+        controller = "IdareMahkemesi";
+    }
+    <div class="dosyaContainer">
+        <div class="dosyaListeleWrapper" style="border-left:5px solid @renk;">
+            <div class="dosyaListeleHeader">
+                <label class="dosyaListeleHeaderTitle">@dosya.DosyaAdi</label>
+                <div class="dosyaListeleİslemler">
+                    <a asp-controller="Dosyalar" asp-action="Detay" asp-route-id="@dosya.DosyaId" title="Görüntüle"><i class="far fa-eye i"></i></a> |
+                    <a asp-controller="Dosyalar" asp-action="Duzenle" asp-route-id="@dosya.DosyaId" title="Düzenle"><i class="far fa-edit i"></i></a> |
+                    <a asp-controller="Dosyalar" asp-action="Sil" asp-route-id="@dosya.DosyaId" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                </div>
+            </div>
+            <div class="dosyaListeleContent">
+                <label>@dosya.MuvekkilId</label>
+                <label>@dosya.DosyaKonu</label>
+                <label>@dosya.DosyaDurumuId</label>
+                <div class="dosyaListeleContentRow">
+                    <label>@dosya.DosyaMahkemeAdi</label>
+                    <label>@dosya.DosyaSehir / @dosya.DosyaIlce</label>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

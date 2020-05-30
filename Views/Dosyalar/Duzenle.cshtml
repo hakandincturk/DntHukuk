@@ -7,15 +7,25 @@
 
 @section Styles{
     <link href="~/css/dosya.css" rel="stylesheet" />
+    <style>
+        .headerBackButton {
+            transition: 175ms all ease-in-out;
+        }
+
+        .headerBackButton:hover {
+            font-size: 16px;
+        }
+    </style>
 }
 <div class="dosyaWrapper">
     <div class="dosyaHeader">
+        <a asp-controller="Dosyalar" asp-action="Listele" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
         <img src="~/pictures/user/user.svg" width="45" height="45" />
-        <label class="dosyaHeaderTitle">Icra Hukuku Dosya Ekle</label>
+        <label class="dosyaHeaderTitle">Dosya Duzenle</label>
     </div>
     <div class="dosyaContent">
         <form asp-controller="IcraHukuku" asp-action="IcraHukukuDosyaDuzenle" method="post">
-            <input asp-for="DosyaId" hidden/>
+            <input asp-for="DosyaId" hidden />
             <div class="dosyaContentRow1">
                 <div class="form-group">
                     <label asp-for="MuvekkilId" class="control-label"></label>
@@ -119,8 +129,8 @@
                 <div class="form-group">
                     <label asp-for="DosyaKarsiTarafEvraklariPath" class="control-label"></label>
                     <div class="custom-file">
-                        <input asp-for="DosyaKarsiTarafEvraklariPath" hidden/>
-                        <label asp-for="DosyaKarsiTarafEvraklariPath" class="custom-file-label"style="background: #ddd;">
+                        <input asp-for="DosyaKarsiTarafEvraklariPath" hidden />
+                        <label asp-for="DosyaKarsiTarafEvraklariPath" class="custom-file-label" style="background: #ddd;">
                             <a href="~/userUploadedFile/@Model.DosyaKarsiTarafEvraklariPath">
                                 @Model.DosyaKarsiTarafEvraklariPath
                             </a>
@@ -151,7 +161,7 @@
             </div>
             <div>
                 <div class="dosyaContentRow1 dosyaContentRow5">
-                    <button asp-controller="Muvekkil" asp-action="Listele" class="btn btn-danger">İptal</button>
+                    <button asp-controller="Dosyalar" asp-action="Listele" class="btn btn-danger">İptal</button>
                     <button class="btn btn-primary">Düzenle</button>
                 </div>
             </div>

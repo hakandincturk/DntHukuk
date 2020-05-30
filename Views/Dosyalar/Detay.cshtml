@@ -1,0 +1,238 @@
+﻿@model Dosyalar
+
+@{
+    ViewData["Title"] = "Dosya Detayı";
+}
+@section Styles{
+    <link href="~/css/dosya.css" rel="stylesheet" />
+    <style>
+        .headerBackButton{
+            transition:175ms all ease-in-out;
+        }
+        .headerBackButton:hover{
+            font-size:16px;
+        }
+    </style>
+}
+
+
+<div class="dosyaWrapper">
+    <div class="dosyaHeader">
+        <a asp-controller="Dosyalar" asp-action="Listele" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
+        <img src="~/pictures/user/user.svg" width="45" height="45" />
+        <label class="dosyaHeaderTitle">Dosya Detayı</label>
+    </div>
+    <div class="muvekkilListeleContent muvekkilDetayContent">
+        <div class="muvekkilListeleContentRow2">
+            <dl class="row maringss">
+                <dt class="col-sm-2">
+                    Dosya Id:
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DosyaId)
+                </dd>
+            </dl>
+        </div>
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.MuvekkilId)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.MuvekkilId)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.SorumluAvukatId)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.SorumluAvukatId)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.MuvekkilKonumuId)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.MuvekkilKonumuId)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaDurumuId)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DosyaDurumuId)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaBaslamaTarihi)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.DosyaBaslamaTarihi)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaBitisTarihi)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.DosyaBitisTarihi)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2" style="margin-bottom:55px;">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaKonu)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DosyaKonu)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaAdi)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DosyaAdi)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaSehir)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.DosyaSehir)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaIlce)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.DosyaIlce)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaMahkemeAdi)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.DosyaMahkemeAdi)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaSiraNo)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.DosyaSiraNo)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2" style="margin-bottom:55px;">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaSonDurum)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DosyaSonDurum)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaMuvekkilEvraklariPath)
+                    </dt>
+                    <dd class="col-sm-10">
+                        <a href="~/userUploadedFile/ @Html.DisplayFor(model => model.DosyaMuvekkilEvraklariPath)">
+                            @Html.DisplayFor(model => model.DosyaMuvekkilEvraklariPath)
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaKarsiTarafEvraklariPath)
+                    </dt>
+                    <dd class="col-sm-10">
+                        <a href="~/userUploadedFile/ @Html.DisplayFor(model => model.DosyaKarsiTarafEvraklariPath)">
+                            @Html.DisplayFor(model => model.DosyaKarsiTarafEvraklariPath)
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaMerciEvraklari)
+                    </dt>
+                    <dd class="col-sm-10">
+                        <a href="~/userUploadedFile/ @Html.DisplayFor(model => model.DosyaMerciEvraklari)">
+                            @Html.DisplayFor(model => model.DosyaMerciEvraklari)
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DosyaKarsiTarafBilgi)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DosyaKarsiTarafBilgi)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

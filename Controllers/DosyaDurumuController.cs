@@ -22,7 +22,7 @@ namespace DntHukuk.Web.Controllers
         // GET: DosyaDurumu
         public async Task<IActionResult> Index()
         {
-            return View(await _context.DosyaDurumu.ToListAsync());
+            return RedirectToAction("YoneticiAyarlariListele", "Ayarlar");
         }
 
         // GET: DosyaDurumu/Create

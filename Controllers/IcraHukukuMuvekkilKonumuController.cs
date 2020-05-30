@@ -22,7 +22,7 @@ namespace DntHukuk.Web.Controllers
         // GET: IcraHukukuMuvekkilKonumus
         public async Task<IActionResult> Index()
         {
-            return View(await _context.IcraHukukuMuvekkilKonumu.ToListAsync());
+            return RedirectToAction("YoneticiAyarlariListele", "Ayarlar");
         }
 
         public IActionResult IcraHukukuMuvekkilKonumuEkle()

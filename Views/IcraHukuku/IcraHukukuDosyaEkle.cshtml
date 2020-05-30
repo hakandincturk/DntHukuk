@@ -6,9 +6,19 @@
 
 @section Styles{
     <link href="~/css/dosya.css" rel="stylesheet" />
+    <style>
+        .headerBackButton {
+            transition: 175ms all ease-in-out;
+        }
+
+        .headerBackButton:hover {
+            font-size: 16px;
+        }
+    </style>
 }
 <div class="dosyaWrapper">
     <div class="dosyaHeader">
+        <a asp-controller="DosyaTuruSec" asp-action="Index" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
         <img src="~/pictures/user/user.svg" width="45" height="45" />
         <label class="dosyaHeaderTitle">Icra Hukuku Dosya Ekle</label>
     </div>
@@ -153,7 +163,7 @@
                 var fileName = $(this).val().split("\\").pop();
                 $(this).next(".custom-file-label").html(fileName);
             });
-             $(".dosyaBitisTarihiRow").addClass("rowHidden");
+            $(".dosyaBitisTarihiRow").addClass("rowHidden");
 
 
             $(document).ready(function () {
@@ -164,7 +174,7 @@
                         $(".dosyaBitisTarihiRow").addClass("rowShow");
                     }
                     else {
-                        
+
                         $(".dosyaBitisTarihiRow").removeClass("rowShow");
                         $(".dosyaBitisTarihiRow").addClass("rowHidden");
                     }

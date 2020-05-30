@@ -7,10 +7,20 @@
 
 @section Styles{
     <link href="~/css/muvekkil.css" rel="stylesheet" />
+    <style>
+        .headerBackButton {
+            transition: 175ms all ease-in-out;
+        }
+
+        .headerBackButton:hover {
+            font-size: 16px;
+        }
+    </style>
 }
 
 <div class="muvekkilWrapper">
     <div class="muvekkilEkleHeader">
+        <a asp-controller="Muvekkil" asp-action="Listele" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
         <img src="~/pictures/user/user.svg" width="45" height="45" />
         <label class="muvekkilEkleHeaderTitle">Müvekkil Ekle</label>
     </div>
@@ -18,7 +28,7 @@
         <form asp-action="Duzenle">
             <div class="form-group">
                 <label asp-for="muvekkilId" class="control-label" hidden></label>
-                <input asp-for="muvekkilId" class="form-control" hidden/>
+                <input asp-for="muvekkilId" class="form-control" hidden />
                 <span asp-validation-for="muvekkilId" class="text-danger" hidden></span>
             </div>
             <div class="muvekkilEkleContentRow1">
@@ -64,7 +74,7 @@
             <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow4">
                 <div class="form-group">
                     <label asp-for="muvekkilTuruId" class="control-label">Müvekkil Türü</label><br />
-                    @await Component.InvokeAsync("MuvekkilTurleriDropDown", new { muvekkilTuruId = Model.muvekkilTuruId})
+                    @await Component.InvokeAsync("MuvekkilTurleriDropDown", new { muvekkilTuruId = Model.muvekkilTuruId })
                     <span asp-validation-for="muvekkilTuruId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
