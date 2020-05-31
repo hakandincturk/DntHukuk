@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Dosyalar>
 @{
     Layout = null;
 }
@@ -6,11 +6,29 @@
 <div class="headerBox headerBoxTumDosyalar">
     <div class="headerBoxHeader">
         <img src="~/pictures/folder/folder.svg" width="30" height="30" />
-        <a href="#">Tüm Dosyalar</a>
+        <a asp-controller="Dosyalar" asp-action="Listele">Tüm Dosyalar</a>
     </div>
     <div class="headerBoxContent headerBoxContentTumDosyalar">
-        <div class="text-center">
-            BURASI DOLDURULACAK(tablo-veri)
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Dosya No</th>
+                    <th>Dosya Adı</th>
+                    <th>Sorumlu Avukat</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.DosyaId</td>
+                        <td>@item.DosyaAdi</td>
+                        <td>@await DntHukuk.Web.ViewComponents.TumDosyalarBoxViewComponent.AvukatIdToName(item.SorumluAvukatId)</td>
+                        <td>Görüntüle</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

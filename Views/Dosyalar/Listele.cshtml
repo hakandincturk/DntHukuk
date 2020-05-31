@@ -44,7 +44,7 @@
     <div class="dosyaContainer">
         <div class="dosyaListeleWrapper" style="border-left:5px solid @renk;">
             <div class="dosyaListeleHeader">
-                <a asp-controller="Dosyalar" asp-action="Detay" asp-route-id="@dosya.DosyaId"><label class="dosyaListeleHeaderTitle">@dosya.DosyaAdi</label></a>
+                <a asp-controller="Dosyalar" asp-action="Detay" asp-route-id="@dosya.DosyaId"><label class="dosyaListeleHeaderTitle" title="Dosya Adı">@dosya.DosyaAdi</label></a>
                 <div class="dosyaListeleİslemler">
                     <a asp-controller="Dosyalar" asp-action="Detay" asp-route-id="@dosya.DosyaId" title="Görüntüle"><i class="far fa-eye i"></i></a> |
                     <a asp-controller="Dosyalar" asp-action="Duzenle" asp-route-id="@dosya.DosyaId" title="Düzenle"><i class="far fa-edit i"></i></a> |
@@ -52,12 +52,12 @@
                 </div>
             </div>
             <div class="dosyaListeleContent">
-                <label>@dosya.MuvekkilId</label>
-                <label>@dosya.DosyaKonu</label>
-                <label>@dosya.DosyaDurumuId</label>
+                <label title="Müvekkil Adı Soyadı"> @await DntHukuk.Web.Controllers.DosyalarController.MuvekkilIdToName(dosya.MuvekkilId)</label>
+                <label title="Dosya Konu">@dosya.DosyaKonu</label>
+                <label title="Dosya Durumu">@await DntHukuk.Web.Controllers.DosyalarController.DosyaDurumuIdToName(dosya.DosyaDurumuId)</label>
                 <div class="dosyaListeleContentRow">
-                    <label>@dosya.DosyaMahkemeAdi</label>
-                    <label>@dosya.DosyaSehir / @dosya.DosyaIlce</label>
+                    <label title="Dosya Mahkeme Adı">@dosya.DosyaMahkemeAdi</label>
+                    <label title="Dosya Mahkeme İl ve İlçe">@dosya.DosyaSehir / @dosya.DosyaIlce</label>
                 </div>
             </div>
         </div>

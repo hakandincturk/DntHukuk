@@ -1,4 +1,9 @@
-﻿
+﻿@model IEnumerable<Muvekkil>
+@using Microsoft.AspNetCore.Identity
+@using DntHukuk.Web.Areas.Identity.Data
+
+@inject UserManager<ApplicationUser> UserManager
+
 @{
     Layout = null;
 }
@@ -6,11 +11,33 @@
 <div class="headerBox headerBoxTumDosyalar">
     <div class="headerBoxHeader">
         <img src="~/pictures/user/user.svg" width="30" height="30" />
-        <a href="#">Tüm Müvekkiller</a>
+        <a asp-controller="Muvekkil" asp-action="Listele">Tüm Müvekkiller</a>
     </div>
     <div class="headerBoxContent headerBoxContentTumDosyalar">
-        <div class="text-center">
-            BURASI DOLDURULACAK(tablo-veri)
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Adı Soyadı</th>
+                    <th>Telefon</th>
+                    <th>E-Posta</th>
+                    <th>Sorumlu Avukat</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var userInfo = UserManager.FindByIdAsync((item.muvekkilSorumluAvukat).ToString());
+
+                    <tr>
+                        <td>@item.muvekkilAdi @item.muvekkilSoyAdi</td>
+                        <td>@item.muvekkilTelefon</td>
+                        <td>@item.muvekkilEmaik</td>
+                        <td>@userInfo.Result.userFirstName @userInfo.Result.userLastName</td>
+                        <td>Görüntüle</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

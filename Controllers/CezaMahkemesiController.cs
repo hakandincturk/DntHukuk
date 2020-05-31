@@ -91,7 +91,7 @@ namespace DntHukuk.Web.Controllers
 
                 _context.Add(yeniDosya);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Listele", "Ayarlar");
+                return RedirectToAction("Listele", "Dosyalar");
             }
             return View();
         }

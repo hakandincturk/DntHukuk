@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DntHukuk.Web.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +10,19 @@ namespace DntHukuk.Web.ViewComponents
 {
     public class DosyalarBoxViewComponent : ViewComponent
     {
-        public DosyalarBoxViewComponent()
+
+        private readonly AuthDbContext _context;
+
+        public DosyalarBoxViewComponent(AuthDbContext context)
         {
-               
+            _context = context;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View();
+            ViewBag.KayitSayisi = _context.Dosyalar.Count();
+            var sonEklenenDosya = await _context.Dosyalar.OrderByDescending(a => a.DosyaId).Select(p => p).ToListAsync();
+            return View(sonEklenenDosya[0]);
         }
-
     }
 }

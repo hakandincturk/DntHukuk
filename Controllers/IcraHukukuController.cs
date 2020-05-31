@@ -117,7 +117,7 @@ namespace DntHukuk.Web.Controllers
                 };
                 _context.Add(yeniDoysa);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Listele", "Dosyalar");
             }
             return View();
         }

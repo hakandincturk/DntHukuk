@@ -1,22 +1,29 @@
-﻿
+﻿@model Dosyalar
+
+@using Microsoft.AspNetCore.Identity
+@using DntHukuk.Web.Areas.Identity.Data
+
+@inject UserManager<ApplicationUser> UserManager
 @{
     Layout = null;
+    var kayitSayisi = ViewBag.KayitSayisi;
+    var userInfo = UserManager.FindByIdAsync((Model.SorumluAvukatId).ToString());
 }
 
 <div class="headerBox">
     <div class="headerBoxHeader">
         <img src="~/pictures/folder/folder.svg" width="60" height="60" />
         <div class="headerBoxHeaderTitle">
-            <a href="#">Dosyalar</a>
-            <label style="margin-top: 6px;">999</label>
+            <a asp-controller="Dosyalar" asp-action="Listele">Dosyalar</a>
+            <label style="margin-top: 6px;" title="Toplam Dosya Sayısı">@kayitSayisi</label>
         </div>
-        
+
     </div>
     <div class="headerBoxContent headerBoxContentDosyalar">
         <label class="firstLabel">En son Eklenen Dosya</label>
-        <label>Dosya No:  XX.003.000.000</label>
-        <label>Dosya Adı: Damla DİNÇTÜRK 2. Mahkeme</label>
-        <label>Sorumlu Avukat: Hakan DİNÇTÜRK</label>
-        <label>Konu: Adam Yaralama</label>
+        <label>Dosya No:  @Model.DosyaId</label>
+        <label>Dosya Adı: @Model.DosyaAdi</label>
+        <label>Sorumlu Avukat: @userInfo.Result.userFirstName @userInfo.Result.userLastName</label>
+        <label>Konu: @Model.DosyaKonu</label>
     </div>
 </div>

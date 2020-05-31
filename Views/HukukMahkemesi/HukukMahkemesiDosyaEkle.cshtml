@@ -18,12 +18,12 @@
 }
 <div class="dosyaWrapper">
     <div class="dosyaHeader">
-        <a asp-controller="HukukMahkemesi" asp-action="HukukMahkemesiDosyaEkle" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
+        <a asp-controller="DosyaTuruSec" asp-action="Index" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
         <img src="~/pictures/user/user.svg" width="45" height="45" />
         <label class="dosyaHeaderTitle">Hukuk Mahkemesi Dosya Ekle</label>
     </div>
     <div class="dosyaContent">
-        <form asp-controller="IcraHukuku" asp-action="IcraHukukuDosyaEkle" method="post" enctype="multipart/form-data">
+        <form asp-controller="HukukMahkemesi" asp-action="HukukMahkemesiDosyaEkle" method="post" enctype="multipart/form-data">
             <div class="dosyaContentRow1">
                 <div class="form-group">
                     <label asp-for="MuvekkilId" class="control-label"></label>
