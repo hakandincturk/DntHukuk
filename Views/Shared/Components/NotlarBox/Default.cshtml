@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Notlar>
 @{
     Layout = null;
 }
@@ -6,11 +6,29 @@
 <div class="headerBox headerBoxNotlar">
     <div class="headerBoxHeader">
         <img src="~/pictures/notes/notes.svg" width="30" height="30" />
-        <a href="#">Notlar</a>
+        <a>Notlar</a>
+        <a asp-controller="Notlar" asp-action="Ekle" title="Ekle"><i class="fas fa-plus i"></i></a>
     </div>
     <div class="headerBoxContent headerBoxContentNotlar">
-        <div class="text-center">
-            BURASI DOLDURULACAK(tablo-veri)
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Not</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td style="width:93%;">@item.Not</td>
+                        <td>
+                            <a asp-controller="Notlar" asp-action="Detay" asp-route-id="@item.notId" title="Görüntüle"><i class="far fa-eye i"></i></a> |
+                            <a asp-controller="Notlar" asp-action="Sil" asp-route-id="@item.notId" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

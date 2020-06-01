@@ -12,9 +12,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Dosya No</th>
-                    <th>Dosya Adı</th>
-                    <th>Sorumlu Avukat</th>
+                    <th style="width: 10%;">Dosya No</th>
+                    <th style="width: 60%;">Dosya Adı</th>
+                    <th style="width: 23%;">Sorumlu Avukat</th>
                     <th></th>
                 </tr>
             </thead>
@@ -25,7 +25,7 @@
                         <td>@item.DosyaId</td>
                         <td>@item.DosyaAdi</td>
                         <td>@await DntHukuk.Web.ViewComponents.TumDosyalarBoxViewComponent.AvukatIdToName(item.SorumluAvukatId)</td>
-                        <td>Görüntüle</td>
+                        <td><a asp-controller="Dosyalar" asp-action="Detay" asp-route-id="@item.DosyaId" title="Görüntüle"><i class="far fa-eye i"></i></a></td>
                     </tr>
                 }
             </tbody>

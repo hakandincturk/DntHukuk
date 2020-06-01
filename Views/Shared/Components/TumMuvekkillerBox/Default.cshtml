@@ -34,7 +34,7 @@
                         <td>@item.muvekkilTelefon</td>
                         <td>@item.muvekkilEmaik</td>
                         <td>@userInfo.Result.userFirstName @userInfo.Result.userLastName</td>
-                        <td>Görüntüle</td>
+                        <td><a asp-controller="Muvekil" asp-action="Detay" asp-route-id="@item.muvekkilId" title="Görüntüle"><i class="far fa-eye i"></i></a></td>
                     </tr>
                 }
             </tbody>

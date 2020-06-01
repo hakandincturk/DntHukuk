@@ -27,6 +27,7 @@ namespace DntHukuk.Web.Data
         public DbSet<IdareMahkemesiMahkemeTuru> IdareMahkemesiMahkemeTuru { get; set; }
         public DbSet<DosyaDurumu> DosyaDurumu { get; set; }
         public DbSet<Dosyalar> Dosyalar { get; set; }
+        public DbSet<Notlar> Notlar { get; set; }
         
 
         protected override void OnModelCreating(ModelBuilder builder)

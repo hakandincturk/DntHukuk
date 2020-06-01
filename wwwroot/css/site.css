@@ -85,7 +85,7 @@ body {
 
     .contentSide .upperContent {
         width: 100%;
-        height: 450px;
+        height: 510px;
         display: flex;
         flex-direction: column;
         align-items: stretch;
