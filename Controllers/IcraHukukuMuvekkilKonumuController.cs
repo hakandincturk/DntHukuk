@@ -20,7 +20,7 @@ namespace DntHukuk.Web.Controllers
         }
 
         // GET: IcraHukukuMuvekkilKonumus
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return RedirectToAction("YoneticiAyarlariListele", "Ayarlar");
         }

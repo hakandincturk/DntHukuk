@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DurusmaDurum>
+
+@{
+    Layout = null;
+}
+
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+<div class="muvekkilWrapper yoneticiAyarlariListeleBox">
+    <div class="muvekkilEkleHeader muvekkilListeleHeader icraHukukuMuvekkilKonumuHeader">
+        <label class="muvekkilEkleHeaderTitle">Duruşma Durumu</label>
+        <div class="icraHukukuMuvekkilKonumuHeaderButtons">
+            <a asp-controller="DurusmaDurum" asp-action="Ekle" title="Ekle"><i class="fas fa-plus i"></i></a>
+        </div>
+    </div>
+    <div class="icraHukukuMuvekkilKonumu muvekkilListeleContent">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DurusmaDurumu)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DurusmaDurumu)
+                        </td>
+                        <td style="width:70px;">
+                            <a asp-controller="DurusmaDurum" asp-action="Duzenle" asp-route-id="@item.DurusmaDurumId" title="Duzenle"><i class="far fa-edit i"></i></a>
+                            <a asp-controller="DurusmaDurum" asp-action="Sil" asp-route-id="@item.DurusmaDurumId" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

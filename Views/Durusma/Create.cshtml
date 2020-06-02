@@ -1,0 +1,50 @@
+﻿@model DntHukuk.Web.Models.Durusma
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Durusma</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DosyaId" class="control-label"></label>
+                <input asp-for="DosyaId" class="form-control" />
+                <span asp-validation-for="DosyaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DurusmaTuruId" class="control-label"></label>
+                <input asp-for="DurusmaTuruId" class="form-control" />
+                <span asp-validation-for="DurusmaTuruId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DurusmaAdi" class="control-label"></label>
+                <input asp-for="DurusmaAdi" class="form-control" />
+                <span asp-validation-for="DurusmaAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MahkemeAciklama" class="control-label"></label>
+                <input asp-for="MahkemeAciklama" class="form-control" />
+                <span asp-validation-for="MahkemeAciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DurusmaTarihi" class="control-label"></label>
+                <input asp-for="DurusmaTarihi" class="form-control" />
+                <span asp-validation-for="DurusmaTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

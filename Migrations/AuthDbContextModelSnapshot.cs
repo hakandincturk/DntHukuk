@@ -205,6 +205,51 @@ namespace DntHukuk.Web.Migrations
                     b.ToTable("Dosyalar");
                 });
 
+            modelBuilder.Entity("DntHukuk.Web.Models.Durusma", b =>
+                {
+                    b.Property<int>("DurusmaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DosyaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DurusmaAdi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(MAX)");
+
+                    b.Property<DateTime>("DurusmaTarihi")
+                        .HasColumnType("DateTime");
+
+                    b.Property<int>("DurusmaTuruId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MahkemeAciklama")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(MAX)");
+
+                    b.HasKey("DurusmaId");
+
+                    b.ToTable("Durusma");
+                });
+
+            modelBuilder.Entity("DntHukuk.Web.Models.DurusmaDurum", b =>
+                {
+                    b.Property<int>("DurusmaDurumId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DurusmaDurumu")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("DurusmaDurumId");
+
+                    b.ToTable("DurusmaDurum");
+                });
+
             modelBuilder.Entity("DntHukuk.Web.Models.HukukMahkemesiMuvekkilKonumu", b =>
                 {
                     b.Property<int>("hukukMahkemesiMuvekkilKonumuId")

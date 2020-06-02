@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DosyaDurumu>
+@{
+    Layout = null;
+    var seciliDosyaDurumu = ViewBag.DosyaDurumu;
+}
+
+@if (seciliDosyaDurumu != null)
+{
+    <select class="dosyaDurumuIdDropDown" name="dosyaDurumuIdDropDown" id="dosyaDurumuIdDropDown" readonly>
+        @foreach (var item in Model)
+        {
+            if (item.dosyaDurumuId == seciliDosyaDurumu)
+            {
+                <option value="@item.dosyaDurumuId" selected>@item.dosyaDurumuTuru</option>
+            }
+            else
+            {
+                <option value="@item.dosyaDurumuId">@item.dosyaDurumuTuru</option>
+            }
+        }
+    </select>
+}
+else
+{
+    <select class="dosyaDurumuIdDropDown" name="dosyaDurumuIdDropDown" id="dosyaDurumuIdDropDown">
+        @foreach (var item in Model)
+        {
+            <option value="@item.dosyaDurumuId">@item.dosyaDurumuTuru</option>
+        }
+    </select>
+}

@@ -15,12 +15,12 @@ namespace DntHukuk.Web.Controllers
         private readonly AuthDbContext _context;
 
         public NotlarController(AuthDbContext context)
-        {
+        { 
             _context = context;
         }
 
         // GET: Notlar
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return RedirectToAction("Index", "Home");
         }
@@ -92,11 +92,6 @@ namespace DntHukuk.Web.Controllers
             _context.Notlar.Remove(notlar);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
-        }
-
-        private bool NotlarExists(int id)
-        {
-            return _context.Notlar.Any(e => e.notId == id);
         }
     }
 }

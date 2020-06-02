@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DntHukuk.Web.Models.Durusma>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DosyaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DurusmaTuruId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DurusmaAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MahkemeAciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DurusmaTarihi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DosyaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurusmaTuruId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurusmaAdi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MahkemeAciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurusmaTarihi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DurusmaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DurusmaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DurusmaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

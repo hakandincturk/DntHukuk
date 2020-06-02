@@ -28,6 +28,8 @@ namespace DntHukuk.Web.Data
         public DbSet<DosyaDurumu> DosyaDurumu { get; set; }
         public DbSet<Dosyalar> Dosyalar { get; set; }
         public DbSet<Notlar> Notlar { get; set; }
+        public DbSet<DurusmaDurum> DurusmaDurum { get; set; }
+        public DbSet<Durusma> Durusma { get; set; }
         
 
         protected override void OnModelCreating(ModelBuilder builder)
