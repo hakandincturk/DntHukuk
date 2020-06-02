@@ -12,7 +12,7 @@ namespace DntHukuk.Web.ViewComponents
     {
         private AuthDbContext _context;
 
-        public DurusmaDurumuDropDownViewComponent(AuthDbContext context, AuthDbContext contextStatic)
+        public DurusmaDurumuDropDownViewComponent(AuthDbContext context)
         {
             _context = context;
         }
@@ -20,7 +20,7 @@ namespace DntHukuk.Web.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync(int? dosyaDurumuId)
         {
             ViewBag.DosyaDurumu = dosyaDurumuId ?? null;
-            return View(await _context.DosyaDurumu.ToListAsync());
+            return View(await _context.DurusmaDurum.ToListAsync());
         }
     }
 }

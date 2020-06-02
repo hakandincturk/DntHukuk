@@ -12,17 +12,33 @@ namespace DntHukuk.Web.Controllers
 {
     public class DurusmaController : Controller
     {
-        private readonly durusmaContext _context;
+        private readonly AuthDbContext _context;
+        private static AuthDbContext _contextStatic;
 
-        public DurusmaController(durusmaContext context)
+        public DurusmaController(AuthDbContext context, AuthDbContext contextStatic)
         {
             _context = context;
+            _contextStatic = contextStatic;
         }
 
         // GET: Durusma
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Durusma.ToListAsync());
+            return RedirectToAction("Listele");
+        }
+
+        // GET: Durusma
+        public async Task<IActionResult> Listele()
+        {
+            List<Durusma> durusmalar = await _context.Durusma.OrderBy(i => i.DurusmaTarihi).Where(c => c.DurusmaTarihi > DateTime.Now).ToListAsync();
+            return View(durusmalar);
+        }
+
+        // GET: Durusma
+        public async Task<IActionResult> TumunuListele()
+        {
+            List<Durusma> durusmalar = await _context.Durusma.OrderBy(i => i.DurusmaTarihi).ToListAsync();
+            return View(durusmalar);
         }
 
         // GET: Durusma/Details/5
@@ -58,6 +74,10 @@ namespace DntHukuk.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                durusma.DosyaId = Convert.ToInt32((HttpContext.Request.Form["dosyaIdDropDown"]));
+                durusma.DurusmaTuruId = Convert.ToInt32((HttpContext.Request.Form["dosyaDurumuIdDropDown"]));
+
                 _context.Add(durusma);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -97,6 +117,8 @@ namespace DntHukuk.Web.Controllers
             {
                 try
                 {
+                    durusma.DosyaId = Convert.ToInt32((HttpContext.Request.Form["dosyaIdDropDown"]));
+                    durusma.DurusmaTuruId = Convert.ToInt32((HttpContext.Request.Form["dosyaDurumuIdDropDown"]));
                     _context.Update(durusma);
                     await _context.SaveChangesAsync();
                 }
@@ -148,6 +170,18 @@ namespace DntHukuk.Web.Controllers
         private bool DurusmaExists(int id)
         {
             return _context.Durusma.Any(e => e.DurusmaId == id);
+        }
+
+        public static async Task<string> DosyaIdToName(int doysyaId)
+        {
+            var dosyaInfo = await _contextStatic.Dosyalar.FirstOrDefaultAsync(i => i.DosyaId == doysyaId);
+            return dosyaInfo.DosyaAdi ?? "Dosya Silinmiş.";
+        }
+
+        public static async Task<string> DurusmaTuruIdToName(int turId)
+        {
+            var durusmaTuruInfo = await _contextStatic.DurusmaDurum.FirstOrDefaultAsync(i => i.DurusmaDurumId == turId);
+            return durusmaTuruInfo.DurusmaDurumu ?? "Duruşma Durumu Silinmiş.";
         }
     }
 }

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Durusma>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+<div class="muvekkilWrapper">
+    <div class="muvekkilEkleHeader muvekkilListeleHeader" style="display:flex; flex-direction:row; align-items:center; justify-content:space-between;">
+        <div>
+            <img src="~/pictures/lawsuit/lawsuit.svg" width="45" height="45" />
+            <label class="muvekkilEkleHeaderTitle">Duruşma Listele</label>
+        </div>
+        <div>
+            <a asp-controller="Durusma" asp-action="TumunuListele" style="margin-left: 10px; font-weight: 700; font-size: 16px;color: #333; text-transform: uppercase;">Bütün Duruşmaları Listele</a>
+        </div>
+    </div>
+    <div class="muvekkilEkleContent muvekkilListeleContent">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DurusmaId)
+                    </th>
+                    <th>
+                        Dosya
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DurusmaTuruId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DurusmaAdi)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MahkemeAciklama)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DurusmaTarihi)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DurusmaId)
+                        </td>
+                        <td>
+                            @await DntHukuk.Web.Controllers.DurusmaController.DosyaIdToName(item.DosyaId)
+                        </td>
+                        <td>
+                            @await DntHukuk.Web.Controllers.DurusmaController.DurusmaTuruIdToName(item.DurusmaTuruId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DurusmaAdi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MahkemeAciklama)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DurusmaTarihi)
+                        </td>
+                        <td>
+                            <a asp-controller="Durusma" asp-action="Detay" asp-route-id="@item.DurusmaId" title="Görüntüle"><i class="far fa-eye i"></i></a> |
+                            <a asp-controller="Durusma" asp-action="Duzenle" asp-route-id="@item.DurusmaId" title="Düzenle"><i class="far fa-edit i"></i></a> |
+                            <a asp-controller="Durusma" asp-action="Sil" asp-route-id="@item.DurusmaId" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

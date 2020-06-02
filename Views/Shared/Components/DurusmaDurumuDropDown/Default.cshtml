@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DosyaDurumu>
+﻿@model IEnumerable<DurusmaDurum>
 @{
     Layout = null;
     var seciliDosyaDurumu = ViewBag.DosyaDurumu;
@@ -9,13 +9,13 @@
     <select class="dosyaDurumuIdDropDown" name="dosyaDurumuIdDropDown" id="dosyaDurumuIdDropDown" readonly>
         @foreach (var item in Model)
         {
-            if (item.dosyaDurumuId == seciliDosyaDurumu)
+            if (item.DurusmaDurumId == seciliDosyaDurumu)
             {
-                <option value="@item.dosyaDurumuId" selected>@item.dosyaDurumuTuru</option>
+                <option value="@item.DurusmaDurumId" selected>@item.DurusmaDurumu</option>
             }
             else
             {
-                <option value="@item.dosyaDurumuId">@item.dosyaDurumuTuru</option>
+                <option value="@item.DurusmaDurumId">@item.DurusmaDurumu</option>
             }
         }
     </select>
@@ -25,7 +25,7 @@ else
     <select class="dosyaDurumuIdDropDown" name="dosyaDurumuIdDropDown" id="dosyaDurumuIdDropDown">
         @foreach (var item in Model)
         {
-            <option value="@item.dosyaDurumuId">@item.dosyaDurumuTuru</option>
+            <option value="@item.DurusmaDurumId">@item.DurusmaDurumu</option>
         }
     </select>
 }

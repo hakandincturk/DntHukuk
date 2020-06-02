@@ -1,0 +1,73 @@
+﻿@model Durusma
+
+@{
+    ViewData["Title"] = "Duzenle";
+}
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+    <style>
+        .headerBackButton {
+            transition: 175ms all ease-in-out;
+        }
+
+            .headerBackButton:hover {
+                font-size: 16px;
+            }
+    </style>
+}
+
+<div class="muvekkilWrapper">
+    <div class="muvekkilEkleHeader">
+        <a asp-controller="Durusma" asp-action="Listele" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
+        <img src="~/pictures/lawsuit/lawsuit.svg" width="45" height="45" />
+        <label class="muvekkilEkleHeaderTitle">Duruşma Duzenle</label>
+    </div>
+    <div class="muvekkilEkleContent">
+        <form asp-controller="Durusma" asp-action="Duzenle" method="post">
+            <input asp-for="DurusmaId" hidden/>
+            <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow4">
+                <div class="form-group">
+                    <label asp-for="DosyaId" class="control-label"></label>
+                    @await Component.InvokeAsync("DosyaDropDown", new { id = Model.DosyaId })
+                    <span asp-validation-for="DosyaId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow4">
+                <div class="form-group">
+                    <label asp-for="DurusmaTuruId" class="control-label"></label>
+                    @await Component.InvokeAsync("DurusmaDurumuDropDown", new { dosyaDurumuId = Model.DurusmaTuruId })
+                    <span asp-validation-for="DurusmaTuruId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow3">
+                <div class="form-group">
+                    <label asp-for="DurusmaAdi" class="control-label"></label>
+                    <input asp-for="DurusmaAdi" class="form-control" />
+                    <span asp-validation-for="DurusmaAdi" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow2">
+                <div class="form-group">
+                    <label asp-for="MahkemeAciklama" class="control-label"></label>
+                    <input asp-for="MahkemeAciklama" class="form-control" />
+                    <span asp-validation-for="MahkemeAciklama" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DurusmaTarihi" class="control-label"></label>
+                    <input asp-for="DurusmaTarihi" class="form-control" />
+                    <span asp-validation-for="DurusmaTarihi" class="text-danger"></span>
+                </div>
+            </div>
+            <div>
+                <div class="muvekkilEkleContentRow1 muvekkilEkleContentRow5">
+                    <button asp-controller="Durusma" asp-action="Listele" class="btn btn-danger">İptal</button>
+                    <button class="btn btn-primary">Düzenle</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

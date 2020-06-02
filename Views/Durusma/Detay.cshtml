@@ -1,0 +1,99 @@
+﻿@model DntHukuk.Web.Models.Durusma
+
+@{
+    ViewData["Title"] = "Durusma Detay";
+}
+
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+    <style>
+        .headerBackButton {
+            transition: 175ms all ease-in-out;
+        }
+
+            .headerBackButton:hover {
+                font-size: 16px;
+            }
+    </style>
+}
+
+<div class="muvekkilWrapper">
+    <div class="muvekkilEkleHeader">
+        <a asp-controller="Durusma" asp-action="Listele" style="margin-right:15px; color:#333;" class="headerBackButton"><i class="fas fa-chevron-left ki"></i></a>
+        <img src="~/pictures/lawsuit/lawsuit.svg" width="45" height="45" />
+        <label class="muvekkilEkleHeaderTitle">Duruşma Detayı</label>
+    </div>
+    <div class="muvekkilListeleContent muvekkilDetayContent">
+
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        Dosya
+                    </dt>
+                    <dd class="col-sm-10">
+                        @await DntHukuk.Web.Controllers.DurusmaController.DosyaIdToName(Model.DosyaId)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DurusmaTuruId)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @await DntHukuk.Web.Controllers.DurusmaController.DurusmaTuruIdToName(Model.DurusmaTuruId)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DurusmaAdi)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DurusmaAdi)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.MahkemeAciklama)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.MahkemeAciklama)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="muvekkilListeleContentRow2">
+            <div class="muvekkilListeleContentRow2Col1">
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.DurusmaTarihi)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.DurusmaTarihi)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="col-sm-12 mt-4 pl-0">
+            <a asp-controller="Durusma" asp-action="Listele"><i class="fas fa-arrow-left"></i> <span>Geri Dön</span></a>
+        </div>
+    </div>
+</div>
+

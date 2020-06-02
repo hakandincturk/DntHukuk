@@ -20,26 +20,21 @@
 {
     var dosyaTuruId = dosya.DosyaTuru;
     var renk = "whitesmoke";
-    var controller = "NotFound";
     if (dosyaTuruId == 1)
     {
         renk = "#52cc00";
-        controller = "IcraHukuku";
     }
     else if (dosyaTuruId == 2)
     {
         renk = "#000dff";
-        controller = "HukukMahkemesi";
     }
     else if (dosyaTuruId == 3)
     {
         renk = "#e02c2c";
-        controller = "CezaMahkemesi";
     }
     else if (dosyaTuruId == 4)
     {
         renk = "#aa6924";
-        controller = "IdareMahkemesi";
     }
     <div class="dosyaContainer">
         <div class="dosyaListeleWrapper" style="border-left:5px solid @renk;">

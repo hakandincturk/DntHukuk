@@ -28,9 +28,6 @@ namespace DntHukuk.Web
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
-
-            services.AddDbContext<durusmaContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("durusmaContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

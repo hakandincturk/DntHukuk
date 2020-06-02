@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Dosyalar>
+
+@{
+    var secilidosyaId = ViewBag.dosyaId;
+}
+
+@if (secilidosyaId != null)
+{
+    <select class="dosyaIdDropDown" name="dosyaIdDropDown" readonly id="dosyaIdDropDown">
+        @foreach (var item in Model)
+        {
+            if (item.DosyaId == secilidosyaId)
+            {
+                <option value="@item.DosyaId" selected>@item.DosyaAdi</option>
+            }
+            else
+            {
+                <option value="@item.DosyaId">@item.DosyaAdi</option>
+            }
+        }
+    </select>
+}
+else
+{
+    <select class="dosyaIdDropDown" name="dosyaIdDropDown" id="dosyaIdDropDown">
+        @foreach (var item in Model)
+        {
+            <option value="@item.DosyaId">@item.DosyaAdi</option>
+        }
+    </select>
+}
