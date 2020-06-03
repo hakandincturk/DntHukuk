@@ -1,6 +1,7 @@
-﻿
+﻿@model Durusma
 @{
     Layout = null;
+    var dosyaAdı = await DntHukuk.Web.ViewComponents.SiradakiDurusmaBoxViewComponent.DosyaIdToName(Model.DosyaId);
 }
 
 <div class="headerBox">
@@ -9,9 +10,9 @@
         <a href="#">Sıradaki Duruşma</a>
     </div>
     <div class="headerBoxContent">
-        <label>Dosya Adı: Hakan DİNÇTÜRK</label>
-        <label>Sıra: 4.Celse</label>
-        <label>Durum: Tarih Verildi</label>
-        <label>Tarih: 01.01.2000</label>
+        <label>Dosya Adı: @dosyaAdı </label>
+        <label>Açılama: @Model.MahkemeAciklama</label>
+        <label>Durum: @await DntHukuk.Web.ViewComponents.SiradakiDurusmaBoxViewComponent.DurusmaDurumuIdToName(Model.DurusmaTuruId) </label>
+        <label>Tarih: @Model.DurusmaTarihi</label>
     </div>
 </div>

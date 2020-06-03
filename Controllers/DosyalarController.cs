@@ -11,9 +11,11 @@ using Microsoft.AspNetCore.Identity;
 using DntHukuk.Web.Areas.Identity.Data;
 using DntHukuk.Web.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DntHukuk.Web.Controllers
 {
+    [Authorize]
     public class DosyalarController : Controller
     {
         private readonly AuthDbContext _context;

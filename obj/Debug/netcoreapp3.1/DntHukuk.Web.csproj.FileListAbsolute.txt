@@ -268,9 +268,6 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\DosyaDurumu\DosyaDurumuEkle.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\DosyaDurumu\DosyaDurumuSil.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\DosyaDurumu\Index.cshtml.g.cs
-D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IcraHukuku\Delete.cshtml.g.cs
-D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IcraHukuku\Details.cshtml.g.cs
-D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IcraHukuku\Edit.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IcraHukuku\IcraHukukuDosyaEkle.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IcraHukuku\Index.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\MuvekkillerDropDown\Default.cshtml.g.cs
@@ -302,3 +299,7 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\DosyaDropDown\Default.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Durusma\Listele.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Durusma\TumunuListele.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Dosyalar\Sil.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\CezaMahkemesi\Index.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\HukukMahkemesi\Index.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IdareMahkemesi\Index.cshtml.g.cs

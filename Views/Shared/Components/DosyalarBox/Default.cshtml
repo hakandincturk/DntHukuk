@@ -23,7 +23,15 @@
         <label class="firstLabel">En son Eklenen Dosya</label>
         <label>Dosya No:  @Model.DosyaId</label>
         <label>Dosya Adı: @Model.DosyaAdi</label>
-        <label>Sorumlu Avukat: @userInfo.Result.userFirstName @userInfo.Result.userLastName</label>
+        <label>Sorumlu Avukat: 
+            @{
+                if (userInfo.Result != null){
+                    <span>@userInfo.Result.userFirstName @userInfo.Result.userLastName</span>
+                }
+                else{
+                    <span>Bilgi Yok</span>
+                }
+            }</label>
         <label>Konu: @Model.DosyaKonu</label>
     </div>
 </div>

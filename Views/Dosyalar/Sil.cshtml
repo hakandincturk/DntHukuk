@@ -1,18 +1,18 @@
 ﻿@model Dosyalar
-
 @{
-    ViewData["Title"] = "Dosya Detayı";
+    ViewData["Title"] = "Sil";
 }
 
 @section Styles{
     <link href="~/css/dosya.css" rel="stylesheet" />
     <style>
-        .headerBackButton{
-            transition:175ms all ease-in-out;
+        .headerBackButton {
+            transition: 175ms all ease-in-out;
         }
-        .headerBackButton:hover{
-            font-size:16px;
-        }
+
+            .headerBackButton:hover {
+                font-size: 16px;
+            }
     </style>
 }
 
@@ -59,10 +59,14 @@
                         @Html.DisplayNameFor(model => model.MuvekkilKonumuId)
                     </dt>
                     <dd class="col-sm-10">
-                        @if (Model.DosyaTuru == 1) {@await DntHukuk.Web.Controllers.DosyalarController.IcraHukukuMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
-                        else if (Model.DosyaTuru == 2) {@await DntHukuk.Web.Controllers.DosyalarController.HukukMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
-                        else if (Model.DosyaTuru == 3) {@await DntHukuk.Web.Controllers.DosyalarController.CezaMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
-                        else if (Model.DosyaTuru == 4) {@await DntHukuk.Web.Controllers.DosyalarController.IdareMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
+                        @if (Model.DosyaTuru == 1)
+                        {@await DntHukuk.Web.Controllers.DosyalarController.IcraHukukuMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
+                    else if (Model.DosyaTuru == 2)
+                    {@await DntHukuk.Web.Controllers.DosyalarController.HukukMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
+                else if (Model.DosyaTuru == 3)
+                {@await DntHukuk.Web.Controllers.DosyalarController.CezaMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
+            else if (Model.DosyaTuru == 4)
+            {@await DntHukuk.Web.Controllers.DosyalarController.IdareMahkemesiMuvekkilKonumuIdToName(Model.MuvekkilKonumuId)}
                     </dd>
                 </dl>
             </div>
@@ -94,14 +98,7 @@
                         @Html.DisplayNameFor(model => model.DosyaBitisTarihi)
                     </dt>
                     <dd class="col-sm-4">
-                        @if(Model.DosyaBitisTarihi == Convert.ToDateTime("01.01.2001 01:01"))
-                        {
-                            <span></span>
-                        }
-                        else
-                        {
-                            <span>@Html.DisplayFor(model => model.DosyaBitisTarihi)</span>
-                        }
+                        @Html.DisplayFor(model => model.DosyaBitisTarihi)
                     </dd>
                 </dl>
             </div>
@@ -245,5 +242,18 @@
                 </dl>
             </div>
         </div>
+
+        <div class="muvekkilSilFooter">
+            <div class="muvekkilSilFooterCol1">
+                <a asp-controller="Dosyalar" asp-action="Listele"><i class="fas fa-arrow-left"></i> <span>Geri Dön</span></a>
+            </div>
+            <div class="muvekkilSilFooterCol2">
+                <form asp-controller="Dosyalar" asp-action="Sil">
+                    <input type="submit" value="Sil" class="btn btn-danger" />
+                </form>
+            </div>
+        </div>
     </div>
 </div>
+
+

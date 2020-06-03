@@ -10,9 +10,11 @@ using DntHukuk.Web.Models;
 using Microsoft.AspNetCore.Hosting;
 using DntHukuk.Web.ViewModel;
 using System.IO;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DntHukuk.Web.Controllers
 {
+    [Authorize]
     public class IdareMahkemesiController : Controller
     {
         private readonly AuthDbContext _context;
@@ -22,6 +24,11 @@ namespace DntHukuk.Web.Controllers
         {
             _context = context;
             _hostEnvironment = hostEnvironment;
+        }
+
+        public IActionResult Index()
+        {
+            return RedirectToAction("Listele", "Dosyalar");
         }
 
         // GET: IdareMahkemesi/Create
@@ -36,9 +43,9 @@ namespace DntHukuk.Web.Controllers
         public async Task<IActionResult> IdareMahkemesiDosyaEkle(DosyalarViewModel dosyaViewModel)
         {
             Dosyalar yeniDosya;
-
-            if (ModelState.IsValid){
-
+            dosyaViewModel.DosyaBitisTarihi = Convert.ToDateTime("01.01.2001 01:01");
+            if (ModelState.IsValid || ModelState.ContainsKey("DosyaBitisTarihi"))
+            { 
                 string muvekkilEvraklariUniqeFileName = null;
                 string karsiTarafEvraklariUniqeFileName = null;
                 string merciEvraklariUniqeFileName = null;

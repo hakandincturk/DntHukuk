@@ -80,6 +80,7 @@ namespace DntHukuk.Web.Controllers
                 muvekkil.muvekkilId = Guid.NewGuid();
                 muvekkil.muvekkilSorumluAvukat = Guid.Parse(HttpContext.Request.Form["sorumluAvukatDropDown"]);
                 muvekkil.muvekkilTuruId = Convert.ToInt32(HttpContext.Request.Form["muvekkilTurleriDropDown"]);
+                muvekkil.muvekkilEvrakPath = "";
                 _context.Add(muvekkil);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Listele");

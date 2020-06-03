@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using DntHukuk.Web.Data;
 using DntHukuk.Web.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DntHukuk.Web.Controllers
 {
+    [Authorize]
     public class AyarlarController : Controller
     {
         private readonly AuthDbContext _context;
