@@ -7,11 +7,11 @@
 <div class="headerBox">
     <div class="headerBoxHeader">
         <img src="~/pictures/lawsuit/lawsuit.svg" width="60" height="60"/>
-        <a href="#">Sıradaki Duruşma</a>
+        <a asp-controller="Durusma" asp-action="Listele">Sıradaki Duruşma</a>
     </div>
     <div class="headerBoxContent">
         <label>Dosya Adı: @dosyaAdı </label>
-        <label>Açılama: @Model.MahkemeAciklama</label>
+        <label>Açıklama: @Model.MahkemeAciklama</label>
         <label>Durum: @await DntHukuk.Web.ViewComponents.SiradakiDurusmaBoxViewComponent.DurusmaDurumuIdToName(Model.DurusmaTuruId) </label>
         <label>Tarih: @Model.DurusmaTarihi</label>
     </div>

@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Durusma>
 @{
     Layout = null;
 }
@@ -9,8 +9,28 @@
         <a asp-controller="Durusma" asp-action="Listele">Sıradaki Duruşmalar</a>
     </div>
     <div class="headerBoxContent headerBoxContentTumDosyalar">
-        <div class="text-center">
-            BURASI DOLDURULACAK(tablo-veri)
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Dosya Adı</th>
+                    <th>Mahkeme Açıklama</th>
+                    <th>Durum</th>
+                    <th>Tarih</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@await DntHukuk.Web.ViewComponents.SiradakiDurusmalarBoxViewComponent.DosyaIdToName(item.DosyaId)</td>
+                        <td>@item.MahkemeAciklama</td>
+                        <td>@await DntHukuk.Web.ViewComponents.SiradakiDurusmalarBoxViewComponent.DurusmaDurumuIdToName(item.DurusmaTuruId)</td>
+                        <td>@item.DurusmaTarihi</td>
+                        <td><a asp-controller="Durusma" asp-action="Detay" asp-route-id="@item.DurusmaId" title="Görüntüle"><i class="far fa-eye i"></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

@@ -177,13 +177,15 @@ namespace DntHukuk.Web.Controllers
         public static async Task<string> DosyaIdToName(int doysyaId)
         {
             var dosyaInfo = await _contextStatic.Dosyalar.FirstOrDefaultAsync(i => i.DosyaId == doysyaId);
-            return dosyaInfo.DosyaAdi ?? "Dosya Silinmiş.";
+            if (dosyaInfo == null) return "Dosya silinmiş";
+            else return dosyaInfo.DosyaAdi;
         }
 
         public static async Task<string> DurusmaTuruIdToName(int turId)
         {
             var durusmaTuruInfo = await _contextStatic.DurusmaDurum.FirstOrDefaultAsync(i => i.DurusmaDurumId == turId);
-            return durusmaTuruInfo.DurusmaDurumu ?? "Duruşma Durumu Silinmiş.";
+            if (durusmaTuruInfo == null) return "Duruşma Durumu Silinmiş.";
+            else return durusmaTuruInfo.DurusmaDurumu;
         }
     }
 }
