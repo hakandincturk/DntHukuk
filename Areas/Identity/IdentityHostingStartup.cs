@@ -21,6 +21,14 @@ namespace DntHukuk.Web.Areas.Identity
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("AuthDbContextConnection")));
 
+                services.Configure<IdentityOptions>(opt => {
+                    opt.Password.RequireDigit = false;
+                    opt.Password.RequiredLength = 3;
+                    opt.Password.RequireNonAlphanumeric = false;
+                    opt.Password.RequireUppercase = false;
+                    opt.Password.RequireLowercase = false;
+                });
+
                 services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                     .AddRoles<IdentityRole>()
                     .AddDefaultTokenProviders()

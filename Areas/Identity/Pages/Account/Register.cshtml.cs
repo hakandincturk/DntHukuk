@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using DntHukuk.Web.ViewModel;
 
 namespace DntHukuk.Web.Areas.Identity.Pages.Account
 {
@@ -94,8 +95,7 @@ namespace DntHukuk.Web.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                //userId = Input.userId eklenebilir
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, userFirstName = Input.userFirstName, userLastName = Input.userLastName, userEmail = Input.Email , userImagePath = Input.userAccesLevel};
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, userFirstName = Input.userFirstName, userLastName = Input.userLastName, userEmail = Input.Email};
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

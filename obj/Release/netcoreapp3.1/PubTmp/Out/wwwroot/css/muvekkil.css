@@ -1,0 +1,224 @@
+﻿    .muvekkilWrapper{
+        padding:0px 10px;
+    }
+
+    .yoneticiAyarlariListeleBox:first-child{
+        margin-top:0px;
+    }
+
+    .yoneticiAyarlariListeleBox {
+        margin-top: 50px;
+}
+
+    .muvekkilWrapper .muvekkilEkleHeader {
+        height: 50px;
+        padding: 0px 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+    }
+
+    .muvekkilWrapper .muvekkilEkleHeader .muvekkilEkleHeaderTitle {
+        margin-left:10px;
+        font-weight:700;
+        font-size:16px;
+        color:#333;
+        text-transform:uppercase;
+    }
+
+    .muvekkilEkleContent{
+        margin-top:20px;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow1 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow1 .form-group{
+        width: 34%;
+        box-sizing:border-box;
+        padding:8px 12px;
+        margin-bottom:12px;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow2 .form-group {
+        width: 50%;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow3 .form-group {
+        width: 100%;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow4 .form-group {
+        width: 50%;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow4 .form-group select {
+        border: 1px solid rgba(0,0,0, 0.3);
+        padding: 10px;
+        margin-left: 10px;
+        background: whitesmoke;
+        outline:none;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow1 button {
+        width: 28%;
+        margin: 10px 10px 0px 20px;
+        padding: 9px 15px;
+    }
+
+    .muvekkilEkleContent form .muvekkilEkleContentRow5{
+       display:flex;
+       align-items:center;
+       justify-content:flex-end;
+    }
+
+    .rowHidden{
+        display:none !important;
+    }
+
+    .rowShow {
+        display: flex;
+    }
+
+    .muvekkilWrapper .muvekkilListeleHeader{
+        border-bottom:none;
+    }
+
+    .muvekkilWrapper .muvekkilListeleContent {
+        margin-top: 10px !important;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent table {
+        text-align: center;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent table td {
+        vertical-align:inherit;
+    }
+    
+    .muvekkilWrapper .muvekkilEkleContent a {
+        margin-left:2px;
+        font-size:16px;
+        color:#333;
+        transition:175ms font-size ease-in-out;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent a:hover {
+        color: rgb(239, 108, 60);
+        font-size: 18px;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent a:first-child:hover {
+        color: #007bff;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent a:last-child:hover {
+        color: #dc3545;
+    }
+
+    .muvekkilWrapper .muvekkilDetayContent {
+        font-size: 15px;
+        padding: 20px;
+        margin-top: 15px !important;
+    }
+
+    .muvekkilWrapper .muvekkilDetayContent .muvekkilListeleContentRow2{
+        border-bottom:1px solid rgba(0,0,0, 0.20)
+    }
+
+    .muvekkilWrapper .muvekkilDetayContent .muvekkilListeleContentRow2 .row {
+        margin: 15px 0px 10px 0px !important;
+    }
+
+    .muvekkilWrapper .muvekkilListeleContent .muvekkilSilFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 15px 0px 10px 0px;
+}
+
+    .muvekkilWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol2 {
+        width:28%;
+    }
+
+    .muvekkilWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol1 {
+        margin-right: 15px;
+    }
+    
+    .muvekkilWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol2 form input{
+        width: 100%;
+    }
+
+    .muvekkilSilH3 {
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumuHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumuHeader .icraHukukuMuvekkilKonumuHeaderButtons a{
+        color:#333;
+        transition:175ms all ease-in-out;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumuHeader .icraHukukuMuvekkilKonumuHeaderButtons a:first-child:hover {
+        color: #007bff;
+        font-size:17px;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu {
+        height:250px;
+        overflow:auto;
+        text-align: left;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr {
+
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a{
+        margin-left: 2px;
+        font-size: 16px;
+        color: #333;
+        transition: 175ms font-size ease-in-out;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a {
+        margin-left: 2px;
+        font-size: 16px;
+        color: #333;
+        transition: 175ms font-size ease-in-out;
+    }
+
+    .muvekkilWrapper .muvekkilEkleContent form .muvekkilEkleContentRow1 .muvekkilEkleContentRow5 button {
+        width: 45%;
+    }
+    
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:hover {
+        font-size:17px;
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:first-child:hover {
+        color: rgb(239, 108, 60);
+    }
+
+    .muvekkilWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:last-child:hover {
+        color: #dc3545;
+    }
+
+
+

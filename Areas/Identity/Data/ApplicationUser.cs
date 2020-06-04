@@ -31,6 +31,6 @@ namespace DntHukuk.Web.Areas.Identity.Data
 
         [PersonalData]
         [Column(TypeName = "nvarchar(max)")]
-        public int userImagePath { get; set; }
+        public string userImagePath { get; set; }
     }
 }

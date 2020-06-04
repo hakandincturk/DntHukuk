@@ -141,6 +141,7 @@ namespace DntHukuk.Web.Controllers
             bosDeger.muvekkilAdi = "Seçim";
             bosDeger.muvekkilSoyAdi = "Yapmadınız";
             var user = await _staticContext.Muvekkil.FirstOrDefaultAsync(i => i.muvekkilId == id) ?? bosDeger;
+            if (user == null) return "Bilgi Yok.";
             string muvekkilAdiSoyadi= user.muvekkilAdi + " " + user.muvekkilSoyAdi;
             return muvekkilAdiSoyadi;
         }
@@ -149,6 +150,7 @@ namespace DntHukuk.Web.Controllers
         public static async Task<string> AvukatIdToName(Guid id)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null) return "Bilgi Yok.";
             string avukatIsmi = user.userFirstName + " " + user.userLastName;
             return avukatIsmi;
         }

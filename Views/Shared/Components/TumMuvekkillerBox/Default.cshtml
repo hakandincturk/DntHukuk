@@ -27,13 +27,17 @@
             <tbody>
                 @foreach (var item in Model)
                 {
+                    var avukatAdi = "Bilgi Yok.";
                     var userInfo = UserManager.FindByIdAsync((item.muvekkilSorumluAvukat).ToString());
-
+                    if (userInfo.Result != null)
+                    {
+                        avukatAdi = userInfo.Result.userFirstName + userInfo.Result.userLastName;
+                    }
                     <tr>
                         <td>@item.muvekkilAdi @item.muvekkilSoyAdi</td>
                         <td>@item.muvekkilTelefon</td>
                         <td>@item.muvekkilEmaik</td>
-                        <td>@userInfo.Result.userFirstName @userInfo.Result.userLastName</td>
+                        <td>@avukatAdi</td>
                         <td><a asp-controller="Muvekil" asp-action="Detay" asp-route-id="@item.muvekkilId" title="Görüntüle"><i class="far fa-eye i"></i></a></td>
                     </tr>
                 }

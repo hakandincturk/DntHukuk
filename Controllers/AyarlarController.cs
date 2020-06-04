@@ -30,5 +30,10 @@ namespace DntHukuk.Web.Controllers
             return View();
         }
 
+        public IActionResult PersonelListesi()
+        {
+            return View();
+        }
+
     }
 }

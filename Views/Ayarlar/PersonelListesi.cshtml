@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using DntHukuk.Web.Areas.Identity.Data
+
+@inject UserManager<ApplicationUser> UserManager
+
+
+@{
+    ViewData["Title"] = "Personel Listelsi";
+    var users = UserManager.Users.ToList();
+}
+
+@section Styles{
+    <link href="~/css/muvekkil.css" rel="stylesheet" />
+}
+
+<div class="muvekkilWrapper" >
+    <div class="muvekkilEkleHeader muvekkilListeleHeader" style="display: flex; align-items: center; justify-content: space-between;">
+        <div>
+            <img src="~/pictures/user/user.svg" width="45" height="45" />
+            <label class="muvekkilEkleHeaderTitle">Personel Listesli</label>
+        </div>
+        <div>
+            <a asp-controller="AvukatOlustur" asp-action="Index" title="Ekle"><i class="fas fa-plus i"></i></a> 
+        </div>
+    </div>
+    <div class="muvekkilEkleContent muvekkilListeleContent">
+        <table class="table" style="text-align:left;">
+            <thead>
+                <tr>
+                    <th>
+                       Adı Soyadı
+                    </th>
+                    <th>
+                       E-Mail
+                    </th>
+                    <th>
+                       Telefon
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in users)
+                {
+                    <tr>
+                        <td>
+                            @item.userFirstName @item.userLastName
+                        </td>
+                        <td>
+                            @item.Email
+                        </td>
+                        <td>
+                            @item.PhoneNumber
+                        </td>
+                        <td>    
+                            <a asp-controller="AvukatOlustur" asp-action="Sil" asp-route-id="@item.Id" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

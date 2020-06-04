@@ -1,0 +1,91 @@
+﻿@model DntHukuk.Web.ViewModel.ApplicationUserViewModel
+
+@{
+    ViewData["Title"] = "Avukat Ekle";
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-12" style="padding: 2rem !important;">
+        <h1>Avukat Ekle</h1>
+        <hr />
+        <form asp-controller="AvukatOlustur" asp-action="Index" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="userFirstName" class="control-label">Avukat İsmi</label>
+                <input asp-for="userFirstName" class="form-control" />
+                <span asp-validation-for="userFirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="userLastName" class="control-label">Avukat Soyismi</label>
+                <input asp-for="userLastName" class="form-control" />
+                <span asp-validation-for="userLastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="userEmail" class="control-label">Email</label>
+                <input asp-for="userEmail" class="form-control" />
+                <span asp-validation-for="userEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Şifre</label>
+                <input asp-for="Password" class="form-control" id="sifre" />
+                <span asp-validation-for="Password" class="text-danger" id="sifreUyari"></span>
+            </div>
+            <div class="dosyaContentRow1 dosyaContentRow3">
+                <div class="form-group">
+                    <label asp-for="userImagePath" class="control-label">Fotoğraf</label>
+                    <div class="custom-file">
+                        <input asp-for="userImagePath" class="form-control custom-file-input" />
+                        <label class="custom-file-label">Dosya Seç</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Oluştur" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        $(document).ready(function () {
+            $(".custom-file-input").on("change", function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).next(".custom-file-label").html(fileName);
+            });
+            $(".dosyaBitisTarihiRow").addClass("rowHidden");
+
+            $("#sifre").on("input",function (){
+                var uzunluk = $(this).val().length;
+                if (uzunluk < 3) {
+                    document.getElementById("sifreUyari").innerHTML = "Şifre en az 3 karakter olmalı";
+                    $("form").submit(function (e) {
+                        e.preventDefault();
+                    });
+                }
+                else {
+                    document.getElementById("sifreUyari").innerHTML = "";
+                }
+            });
+
+            $(document).ready(function () {
+                $("select.dosyaDurumuIdDropDown").change(function () {
+                    var selectedType = $(this).children("option:selected").text();
+                    if (selectedType != "Devam Ediyor") {
+                        $(".dosyaBitisTarihiRow").removeClass("rowHidden");
+                        $(".dosyaBitisTarihiRow").addClass("rowShow");
+                    }
+                    else {
+
+                        $(".dosyaBitisTarihiRow").removeClass("rowShow");
+                        $(".dosyaBitisTarihiRow").addClass("rowHidden");
+                    }
+                });
+            });
+
+        });
+    </script>
+}

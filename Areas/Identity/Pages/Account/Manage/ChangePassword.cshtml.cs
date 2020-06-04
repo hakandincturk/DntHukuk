@@ -92,8 +92,8 @@ namespace DntHukuk.Web.Areas.Identity.Pages.Account.Manage
             }
 
             await _signInManager.RefreshSignInAsync(user);
-            _logger.LogInformation("User changed their password successfully.");
-            StatusMessage = "Your password has been changed.";
+            _logger.LogInformation("Kullanıcı şifresini değiştiridi.");
+            StatusMessage = "Şifre başarılı bir şekilde değiştirildi.";
 
             return RedirectToPage();
         }

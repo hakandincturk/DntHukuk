@@ -99,7 +99,6 @@
     }
 
     .sideBarContainer .sideBarWrapper .sideBarMenu ul li .subMenu {
-        padding-left: 20px;
         overflow: hidden;
         opacity: 0;
         margin-top: -75px;
@@ -111,15 +110,22 @@
         width: 100%;
         font-size: 16px;
         font-weight: 400;
+        color:#333;
+        text-decoration:none;
         width: 100%;
         cursor: pointer;
-        padding: 10px 0px 10px 10px;
+        padding: 10px 0px 10px 30px;
         display: block;
-        overflow:hidden
+        overflow:hidden;
+        transition:175ms background ease-in-out;
+    }
+
+    .sideBarContainer .sideBarWrapper .sideBarMenu ul li .subMenu .subMenuItem:hover{
+        background:rgba(0,0,0, 0.1);
     }
 
     .sideBarContainer .sideBarWrapper .sideBarMenu ul li:hover .subMenu {
-        margin-top:0px;
+        margin-top: 0px;
         opacity: 1;
         height: auto;
         position: relative;
@@ -127,4 +133,26 @@
 
     .sideBarContainer .sideBarWrapper .sideBarMenu ul li:hover a .ki {
         transform: rotate(0deg);
+    }
+
+    .sideBarContainer .sideBarWrapper .sideBarMenu ul li .subMenu .subMenuItem .subMenusSubMenu{
+        overflow: hidden;
+        opacity: 0;
+        margin-top: -75px;
+        transition: 200ms ease-out all;
+        -webkit-transition: 200ms ease-out all;
+    }
+
+    .sideBarContainer .sideBarWrapper .sideBarMenu ul li .subMenu .subMenuItem .subMenusSubMenu .subMenuItems{
+        width: 100%;
+        font-size: 16px;
+        font-weight: 400;
+        color: #333;
+        text-decoration: none;
+        width: 100%;
+        cursor: pointer;
+        padding: 10px 0px 10px 30px;
+        display: block;
+        overflow: hidden;
+        transition: 175ms background ease-in-out;
     }

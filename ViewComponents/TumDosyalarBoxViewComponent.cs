@@ -26,9 +26,10 @@ namespace DntHukuk.Web.ViewComponents
             return View(await _context.Dosyalar.OrderByDescending(i => i.DosyaId).ToListAsync());
         }
 
-        public static async Task<string> AvukatIdToName(Guid id)
+        public static async Task<string> AvukatIdToName(Guid? id)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null) return "Bilgi Yok";
             string avukatIsmi = user.userFirstName + " " + user.userLastName;
             return avukatIsmi;
         }

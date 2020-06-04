@@ -54,14 +54,31 @@
         padding-left: 6px;
     }
 
-    .headerBox .headerBoxContentNotlar {
-        max-width:100%;
-        display:flex;
-        flex-direction:row;
-        justify-content:center;
-        align-items:center;
+    .headerBoxTumDosyalar {
+        margin-top: 30px;
+    }
+    .headerBoxNotlar {
+        width: calc(100% - 15px);
     }
 
+    .headerBoxTumDosyalar .headerBoxHeader a, .headerBoxNotlar .headerBoxHeader a {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .headerBoxTumDosyalar .headerBoxContentTumDosyalar{
+       display:block;
+       height:215px;
+       overflow:auto;
+    }
+
+
+    .headerBox .headerBoxContentNotlar{
+        max-width:100%;
+        display:block;
+    }
+
+    
     .headerBox .headerBoxContentDosyalar label {
         line-height: 14px !important;
         font-size: 14px !important;
@@ -81,4 +98,8 @@
         font-weight: 500 !important;
         text-transform: uppercase;
         margin-bottom:10px;
+    }
+
+    .headerBox .headerBoxContent a {
+        color:#333;
     }

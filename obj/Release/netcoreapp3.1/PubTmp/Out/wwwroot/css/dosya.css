@@ -1,0 +1,328 @@
+﻿    .dosyaWrapper {
+        padding: 0px 10px;
+    }
+
+    .yoneticiAyarlariListeleBox:first-child {
+        margin-top: 0px;
+    }
+
+    .yoneticiAyarlariListeleBox {
+        margin-top: 50px;
+    }
+
+    .dosyaWrapper .dosyaHeader {
+        height: 50px;
+        padding: 0px 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.36);
+    }
+
+    .dosyaWrapper .dosyaHeader .dosyaHeaderTitle {
+        margin-left: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        color: #333;
+        text-transform: uppercase;
+    }
+
+    .dosyaContent {
+        margin-top: 20px;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 .form-group {
+        width:28%;
+        box-sizing: border-box;
+        padding: 8px 12px;
+        margin-bottom: 12px;
+        display:flex;
+        flex-direction:column;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow3 .form-group {
+        width: 58%;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow4 .width15 {
+        width: 15%;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 .form-group select {
+        border: 1px solid rgba(0,0,0, 0.3);
+        padding: 10px;
+        margin-left: 10px;
+        background: whitesmoke;
+        outline: none;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 .form-group input {
+        border: 1px solid rgba(0,0,0, 0.3);
+        margin-left: 10px;
+        outline: none;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 a {
+        width: 28%;
+        margin: 10px 10px 0px 20px;
+        padding: 9px 15px;
+        color:#fff;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 button {
+        width: 28%;
+        margin: 10px 10px 0px 20px;
+        padding: 9px 15px;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow5 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .rowHidden {
+        display: none !important;
+    }
+
+    .rowShow {
+        display: flex;
+    }
+
+    .dosyaWrapper .muvekkilListeleHeader {
+        border-bottom: none;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader a {
+        color: #333;   
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader a label {
+        cursor: pointer;
+        font-size:18px;
+        transition:175ms font-size ease-in-out;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader a label:hover {
+        font-size:19px;
+    }
+
+    .dosyaWrapper .muvekkilListeleContent {
+        margin-top: 10px !important;
+    }
+
+    .dosyaWrapper .dosyaContent table {
+        text-align: center;
+    }
+
+    .dosyaWrapper .dosyaContent table td {
+        vertical-align: inherit;
+    }
+
+    .dosyaWrapper .dosyaContent a {
+        margin-left: 2px;
+        font-size: 16px;
+        color: #333;
+        transition: 175ms all ease-in-out;
+    }
+
+    .dosyaWrapper .dosyaContent a:hover {
+        color: rgb(239, 108, 60);
+    }
+
+    .dosyaWrapper .dosyaContent a:first-child:hover {
+        color: #007bff;
+    }
+
+    .dosyaWrapper .dosyaContent a:last-child:hover {
+        color: #dc3545;
+    }
+
+    .dosyaWrapper .muvekkilDetayContent {
+        font-size: 15px;
+        padding: 20px;
+        margin-top: 15px !important;
+    }
+
+    .dosyaWrapper .muvekkilDetayContent .muvekkilListeleContentRow2 {
+        border-bottom: 1px solid rgba(0,0,0, 0.05)
+    }
+
+    .dosyaWrapper .muvekkilDetayContent .muvekkilListeleContentRow2 .row {
+        margin: 15px 0px 10px 0px !important;
+    }
+
+    .dosyaWrapper .muvekkilListeleContent .muvekkilSilFooter {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 15px 0px 10px 0px;
+    }
+
+    .dosyaWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol2 {
+        width: 28%;
+    }
+
+    .dosyaWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol1 {
+        margin-right: 15px;
+    }
+
+    .dosyaWrapper .muvekkilListeleContent .muvekkilSilFooter .muvekkilSilFooterCol2 form input {
+        width: 100%;
+    }
+
+    .muvekkilSilH3 {
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumuHeader {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumuHeader .icraHukukuMuvekkilKonumuHeaderButtons a {
+        color: #333;
+        transition: 175ms all ease-in-out;
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumuHeader .icraHukukuMuvekkilKonumuHeaderButtons a:first-child:hover {
+        color: #007bff;
+        font-size: 17px;
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumu {
+        height: 250px;
+        overflow: auto;
+        text-align: left;
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumu table tbody tr {
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumu table tbody tr td a {
+        margin-left: 2px;
+        font-size: 16px;
+        color: #333;
+        transition: 175ms font-size ease-in-out;
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumu table tbody tr td a {
+        margin-left: 2px;
+        font-size: 16px;
+        color: #333;
+        transition: 175ms font-size ease-in-out;
+    }
+
+    .dosyaWrapper .dosyaContent form .dosyaContentRow1 .dosyaContentRow5 button {
+        width: 45%;
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:hover {
+        font-size: 17px;
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:first-child:hover {
+        color: rgb(239, 108, 60);
+    }
+
+    .dosyaWrapper .icraHukukuMuvekkilKonumu table tbody tr td a:last-child:hover {
+        color: #dc3545;
+    }
+
+    .dosyaContainer{
+        color: #333;
+        padding-left: 20px;
+        margin-bottom:25px;
+    }
+
+    .muvekkilDetayContent hr {
+        border-color: rgba(0,0,0, 0.05);
+    }
+
+    .dosyaContainer a {
+        text-decoration: none;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper {
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        border-top: 1px solid rgba(0, 0, 0, 0.25);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader {
+        height: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin:16px 24px 8px 12px;
+        padding-left:6px;
+        font-size:18px;
+        font-weight:600;
+        border-bottom:1px solid rgba(0,0,0,0.75);
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader .dosyaListeleİslemler a {
+        color: #333;
+        font-size: 16px;
+        transition: 175ms all ease-in-out;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader .dosyaListeleİslemler a:hover {
+        color: rgb(239, 108, 60);
+        font-size:18px;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader .dosyaListeleİslemler a:first-child:hover {
+        color: #007bff;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader .dosyaListeleİslemler a:last-child:hover {
+        color: #dc3545;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleContent {
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:center;
+        margin-top:6px;
+        padding-left:24px;
+        padding-right:24px;
+        font-size:16px;
+        font-weight:400;
+    }
+
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader .dosyaListeleContent .dosyaListeleContentRow {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width:100%;
+    }
+
+    .dosyaContainer .dosyaListeleWrapper .dosyaListeleHeader .dosyaListeleContent .dosyaListeleContentRow label {
+        width: 49%;
+    }
+
+
+

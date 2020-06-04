@@ -1,28 +1,26 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Kayıt Ol";
-    Layout = "~/Areas/Identity/Pages/_Authlayout.cshtml";
+    ViewData["Title"] = "Avukat Ekle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
-<div>
-
-</div>
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 " style="padding:2rem !important;">
+    <h1>@ViewData["Title"]</h1>
+        <hr />
         <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Input.userFirstName"></label>
+                        <label asp-for="Input.userFirstName">Avukat İsmi</label>
                         <input asp-for="Input.userFirstName" class="form-control" />
                         <span asp-validation-for="Input.userFirstName" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label asp-for="Input.userLastName"></label>
+                        <label asp-for="Input.userLastName">Avukat Soyismi</label>
                         <input asp-for="Input.userLastName" class="form-control" />
                         <span asp-validation-for="Input.userLastName" class="text-danger"></span>
                     </div>
@@ -43,7 +41,7 @@
                 <input asp-for="Input.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">Kayıt Ol</button>
         </form>
     </div>
 </div>
