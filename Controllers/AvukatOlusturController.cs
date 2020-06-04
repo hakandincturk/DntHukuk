@@ -44,6 +44,8 @@ namespace DntHukuk.Web.Controllers
             ApplicationUser user;
             if (ModelState.IsValid)
             {
+
+                if (userInf.Password == null ||userInf.Password.Length < 3) return View(userInf);
                 string userImagePathUniqeName = null;
 
                 if (userInf.userImagePath != null)
