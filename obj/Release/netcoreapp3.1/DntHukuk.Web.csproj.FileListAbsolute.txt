@@ -223,7 +223,6 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\bin\Release\netcoreapp3.1\runtimes\
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\bin\Release\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\bin\Release\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
-D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Views\AvukatOlustur\Index.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Views\Ayarlar\Index.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Views\Ayarlar\PersonelListesi.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Views\Ayarlar\YoneticiAyarlariListele.cshtml.g.cs
@@ -306,3 +305,4 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Vie
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Views\Shared\Components\TumDosyalarBox\Default.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Views\Shared\Components\TumMuvekkillerBox\Default.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Views\AvukatOlustur\Sil.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Release\netcoreapp3.1\Razor\Views\AvukatOlustur\Ekle.cshtml.g.cs
