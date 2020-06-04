@@ -40,6 +40,7 @@ namespace DntHukuk.Web.Controllers
         public static async Task<string> AvukatIdToName(Guid id)
         {
             var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null) return "Bilgi Yok";
             string avukatIsmi = user.userFirstName + " " + user.userLastName;
             return avukatIsmi;
         }

@@ -303,6 +303,6 @@ D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\CezaMahkemesi\Index.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\HukukMahkemesi\Index.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\IdareMahkemesi\Index.cshtml.g.cs
-D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\AvukatOlustur\Index.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\Ayarlar\PersonelListesi.cshtml.g.cs
 D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\AvukatOlustur\Sil.cshtml.g.cs
+D:\Hakan\Code\asp-core\DntHukuk\DntHukuk.Web\obj\Debug\netcoreapp3.1\Razor\Views\AvukatOlustur\Ekle.cshtml.g.cs

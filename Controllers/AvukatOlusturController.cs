@@ -32,13 +32,14 @@ namespace DntHukuk.Web.Controllers
             _hostEnvironment = hostEnvironment;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Ekle()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(ApplicationUserViewModel userInf)
+        public async Task<IActionResult> Ekle(ApplicationUserViewModel userInf)
         {
             ApplicationUser user;
             if (ModelState.IsValid)
@@ -79,10 +80,15 @@ namespace DntHukuk.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Sil(Guid id)
         {
-            ApplicationUser DeleteUser = await _userManager.FindByIdAsync(id.ToString());
-            var result = await _userManager.DeleteAsync(DeleteUser);
-            if (result.Succeeded) return RedirectToAction("PersonelListesi", "Ayarlar");
-            else return RedirectToAction("PersonelListesi", "Ayarlar");
+            int userCount = _userManager.Users.Count();
+            if (userCount > 1)
+            {
+                ApplicationUser DeleteUser = await _userManager.FindByIdAsync(id.ToString());
+                var result = await _userManager.DeleteAsync(DeleteUser);
+                if (result.Succeeded) return RedirectToAction("PersonelListesi", "Ayarlar");
+                else return RedirectToAction("PersonelListesi", "Ayarlar");
+            }
+            else return RedirectToAction("PersonelListesli", "Ayarlar");
         }
     }
 }

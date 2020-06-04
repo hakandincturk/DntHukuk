@@ -20,7 +20,7 @@
             <label class="muvekkilEkleHeaderTitle">Personel Listesli</label>
         </div>
         <div>
-            <a asp-controller="AvukatOlustur" asp-action="Index" title="Ekle"><i class="fas fa-plus i"></i></a> 
+            <a asp-controller="AvukatOlustur" asp-action="Ekle" title="Ekle"><i class="fas fa-plus i"></i></a> 
         </div>
     </div>
     <div class="muvekkilEkleContent muvekkilListeleContent">
@@ -53,7 +53,10 @@
                             @item.PhoneNumber
                         </td>
                         <td>    
-                            <a asp-controller="AvukatOlustur" asp-action="Sil" asp-route-id="@item.Id" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                            @if (UserManager.Users.Count() > 1)
+                            {
+                                <a asp-controller="AvukatOlustur" asp-action="Sil" asp-route-id="@item.Id" title="Sil"><i class="far fa-trash-alt i"></i></a>
+                            }
                         </td>
                     </tr>
                 }
