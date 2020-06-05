@@ -63,7 +63,7 @@ namespace DntHukuk.Web.Controllers
                     userEmail = userInf.userEmail,
                     userFirstName = userInf.userFirstName,
                     userLastName = userInf.userLastName,
-                    userImagePath = userImagePathUniqeName,
+                    userImagePath = userImagePathUniqeName ?? "",
                     EmailConfirmed = true
                 };
 
